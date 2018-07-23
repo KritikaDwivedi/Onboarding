@@ -15,7 +15,7 @@ public class nestLogin extends WebDriverBaseTestPage<WebDriverTestPage>{
 	private QAFWebElement password;
 	
 	@FindBy(locator="login.loginbtn.btn")
-	private QAFWebElement login;
+	private QAFWebElement loginbtn;
 
 	@Override
 	protected void openPage(PageLocator arg0, Object... arg1) {
