@@ -1,0 +1,3 @@
+login.username.txt = {'locator':'name=username','desc':'User name texbox on Login Page'}
+login.password.txt = {'locator':'name=password','desc':'Password texbox on Login Page'}
+login.loginbtn.btn = {'locator':'xpath=//button[@type="submit"]','desc':'Login button on Login Page'}
