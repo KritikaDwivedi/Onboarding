@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+
+	<Login>
+		<Lead>
+			<username>ashish.biradar1</username>
+			<password>Test@1234</password>
+		</Lead>
+	</Login>
+
+	<Login>
+		<Manager>
+			<username>tushit.shah</username>
+			<password>tushit.shah</password>
+		</Manager>
+	</Login>
+	
+	<Login>
+		<HR>
+			<username>gaurav.parekh</username>
+			<password>gaurav.parekh</password>
+		</HR>
+	</Login>
+	
+</root>

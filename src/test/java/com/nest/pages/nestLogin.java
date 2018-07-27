@@ -14,6 +14,18 @@ public class nestLogin extends WebDriverBaseTestPage<WebDriverTestPage>{
 	@FindBy(locator="login.password.txt")
 	private QAFWebElement password;
 	
+	public QAFWebElement getUsername() {
+		return username;
+	}
+
+	public QAFWebElement getPassword() {
+		return password;
+	}
+
+	public QAFWebElement getLoginbtn() {
+		return loginbtn;
+	}
+
 	@FindBy(locator="login.loginbtn.btn")
 	private QAFWebElement loginbtn;
 

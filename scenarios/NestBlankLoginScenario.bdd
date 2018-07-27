@@ -1,0 +1,9 @@
+#
+#SCENARIO: QEO-4834
+#META-DATA: {"description":"Verify the functionality of the Login when Username and Password field is empty", "groups":["SMOKE"]}
+#	Given user launches the application
+#	When user enters user name as '' and password as ''
+#	And clicks on the Login button
+#	Then user should get error message 'Username is required'
+#END
+

@@ -1,0 +1,23 @@
+#
+#SCENARIO: QEO-4836
+#META-DATA: {"description":"Verify UI of My Post page", "groups":["SMOKE"]}
+#	Given user launches the application
+#	When user enters user name as '${Login.HR.username}' and password as '${Login.HR.password}'
+#	And clicks on the Login button
+#	Then user should land on the Home page
+#	When user turns on 'Manager View'
+#	And navigates to 'Publisher' and 'My Posts'
+#	Then title of page should be 'My Posts'
+#	And navigation for the page should be 'Home  / Publisher'
+#	And two date picker should be present with label From and To
+#	And one text field should be present with label Keyword
+#	And dropdown should be present for Category
+#	And two Buttons should be present for Search and Reset
+#	And table should be present to show search results with columns Title, Category, Posted on, Action
+#	And date should be in 'dd-MMMM-yyyy' format
+#	And hide filter icon should be on right upper side of page
+#	And pagination should be present on right lower end of page
+#	And action column should have edit and delete icons
+#	And New Post Button should be present on just below the table
+#	
+#END

@@ -1,0 +1,1 @@
+utility.heading.header.loc = {\"locator\":\"xpath=//div[contains(text(),'%s')]\",\"desc\":\"Heading of the page\"}

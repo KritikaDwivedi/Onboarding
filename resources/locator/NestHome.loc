@@ -1,0 +1,5 @@
+home.logout.btn.loc = {\"locator\":\"xpath=//div[@title='Log out']\",\"desc\":\"Logout button on Nest Home Page\"}
+home.view.btn.loc = {\"locator\":\"xpath=//div[text()='My View' or text()='Manager View']/following-sibling::div\",\"desc\":\"Button to change the view either to Manager View or My View\"}
+home.navigation.pane.loc = {\"locator\":\"xpath=//span[@title='Navigation']//img\",\"desc\":\"Navigation pane on home page\"}
+home.menu.options.loc = {\"locator\":\"xpath=//span[@title='Navigation']//img//ancestor::ul[@id='menu']/following-sibling::ul[@id='menu']//li[contains(@ng-show,'%s')]/span[text()='%s']\",\"desc\":\"Menu options on home page\"}
+home.submenu.options.loc = {\"locator\":\"xpath=//span[@title='Navigation']//img//ancestor::ul[@id='menu']/following-sibling::ul[@id='menu']//li[contains(@ng-show,'%s')]//a[text()='%s']\",\"desc\":\"Submenu options on home page\"}

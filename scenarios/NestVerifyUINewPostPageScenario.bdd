@@ -1,0 +1,18 @@
+#
+#SCENARIO: QEO-4837
+#META-DATA: {"description":"Verify UI for New Post page", "groups":["SMOKE"]}
+#	Given user launches the application
+#	When user enters user name as '${Login.HR.username}' and password as '${Login.HR.password}'
+#	And clicks on the Login button
+#	Then user should land on the Home page
+#	When user turns on 'Manager View'
+#	And navigates to 'Publisher' and 'My Posts'
+#	Then title of page should be 'My Posts'
+#	When user clicks on Create button on My Posts page
+#	Then breadcrumb should be 'Home  / Publisher  / My Posts'
+#	And text fields should be present Title, Post URL, Image URL, Description
+#	And two dropdowns should be present Category and Location
+#	And two Buttons should be present Submit and Back
+#	And 'Title' , 'Post URL' , 'Category' , 'Location' , 'Description' should be compulsory fields
+#END
+#
