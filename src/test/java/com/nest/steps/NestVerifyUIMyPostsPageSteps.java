@@ -6,10 +6,8 @@ import org.hamcrest.Matchers;
 
 import com.nest.utilities.NavigateToPageUtility;
 import com.nest.utilities.VerifyHeaderOfPageUtility;
-import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
-import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyUIMyPostsPageSteps {
@@ -37,7 +35,7 @@ public class NestVerifyUIMyPostsPageSteps {
 	}
 	
 	@QAFTestStep(description = "title of page should be {0}")
-	public void verifyTitileOfSubMenuPage(String title) {
+	public void verifyTitileOfSubMenuPage(String title) throws InterruptedException {
 		// step implementation
 		head.verifyHeaderOfPage(title);
 	}

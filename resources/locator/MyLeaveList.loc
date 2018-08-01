@@ -1,0 +1,5 @@
+myLeave.leaveDuration.txt.loc = {\"locator\":\"xpath=//td[@data-title='Leave Duration']\",\"desc\":\"Total leave count on Apply Leave page\"}
+myLeave.leaveDate.radiobtn.loc = {\"locator\":\"xpath=//span[text()='Leave Date']\",\"desc\":\"Leave Date radiobutton on My Leave list page\"}
+myLeave.leaveFrom.txt.loc = {\"locator\":\"xpath=//div[text()='From']/following-sibling::div/input\",\"desc\":\"Leave From Date on My Leave list page\"}
+myLeave.leaveTo.txt.loc = {\"locator\":\"xpath=//div[text()='To']/following-sibling::div/input\",\"desc\":\"Leave To Date on My Leave list page\"}
+myLeave.search.btn.loc = {\"locator\":\"xpath=//button[text()='Search']\",\"desc\":\"Search button My Leave list page\"}

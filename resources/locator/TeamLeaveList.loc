@@ -1,0 +1,3 @@
+teamLeaveList.columns.tbl.loc = {\"locator\":\"xpath=//table[@class='table table-bordered']//*[contains(text(),'%s')]\",\"desc\":\"Columns on Team Leave List page\"}
+teamLeaveList.submit.btn.loc = {\"locator\":\"xpath=//button[text()=' Submit ']\",\"desc\":\"Submit button\"}
+teamLeaveList.approveAll.btn.loc = {\"locator\":\"xpath=//button[text()=' Approve All ']\",\"desc\":\"Approve All button\"}

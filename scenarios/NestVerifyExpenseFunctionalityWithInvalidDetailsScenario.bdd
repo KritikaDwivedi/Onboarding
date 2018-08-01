@@ -1,0 +1,16 @@
+#
+#SCENARIO: QEO-4841
+#META-DATA: {"description":"Verify new expense functionality with invalid details", "groups":["SMOKE"]}
+#	Given user launches the application
+#	When user enters user name as '${Login.Lead.username}' and password as '${Login.Lead.password}'
+#	And clicks on the Login button
+#	Then user should land on the Home page
+#	And navigates to 'Reimbursement' and 'My Expense List'
+#	Then title of page should be 'My Expense List'
+#	When clicks on New Expense button
+#	Then title of page should be 'New Expense'
+#	And fills the invalid details for Title as 'abcd' , Expense Date as 'abcd' , Project as 'abcd' if Other then '' , Expense Category as '' , Expense Amount as ''
+#	And user clicks on 'Submit' Button
+#	Then there should be an error message on the form with focus
+#END
+#

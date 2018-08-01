@@ -1,9 +1,8 @@
 package com.nest.steps;
 
-import static com.qmetry.qaf.automation.step.CommonStep.click;
-
 import org.hamcrest.Matchers;
 
+import com.nest.utilities.ButtonClick;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
@@ -11,11 +10,11 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyUINewPostPageSteps {
-
-	@QAFTestStep(description = "user clicks on Create button on My Posts page")
-	public void verifyMyPostCreateButtonClick() throws InterruptedException{
+	ButtonClick btn=new ButtonClick();
+	@QAFTestStep(description = "user clicks on {0} button")
+	public void clickButton(String button) throws InterruptedException{
 		// step implementation
-		click("myPosts.createPost.btn.loc");
+		btn.buttonClicking(button);
 		Thread.sleep(5000);
 	}
 	
@@ -54,20 +53,19 @@ public class NestVerifyUINewPostPageSteps {
 	@QAFTestStep(description = "{0} , {1} , {2} , {3} , {4} should be compulsory fields")
 	public void verifyNewPostMandatoryFields(String title, String postURL, String category, String location, String description){
 		// step implementation
-		QAFExtendedWebElement titleNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),title));
-		QAFExtendedWebElement postURLNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),postURL));
-		QAFExtendedWebElement categoryNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),category));
-		QAFExtendedWebElement locationNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),location));
-		QAFExtendedWebElement descriptionNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),description));
-//		titleNewPost.verifyPresent();
-//		postURLNewPost.verifyPresent();
-//		categoryNewPost.verifyPresent();
-//		locationNewPost.verifyPresent();
-//		descriptionNewPost.verifyPresent();
-		titleNewPost.isPresent();
-		postURLNewPost.isPresent();
-		categoryNewPost.isPresent();
-		locationNewPost.isPresent();
-		descriptionNewPost.isPresent();
+		String column[]= {title, postURL, category, location, description};
+		for(int i=0; i<4; i++)
+		{
+		QAFExtendedWebElement columnName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),column[i]));
+//		QAFExtendedWebElement postURLNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),postURL));
+//		QAFExtendedWebElement categoryNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),category));
+//		QAFExtendedWebElement locationNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),location));
+//		QAFExtendedWebElement descriptionNewPost= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),description));
+//		titleNewPost.isDisplayed();
+//		postURLNewPost.isDisplayed();
+//		categoryNewPost.isDisplayed();
+//		locationNewPost.isDisplayed();
+		columnName.isDisplayed();
+		}
 	}
 }

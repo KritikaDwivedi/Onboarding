@@ -1,1 +1,2 @@
 utility.heading.header.loc = {\"locator\":\"xpath=//div[contains(text(),'%s')]\",\"desc\":\"Heading of the page\"}
+utility.button.btn.loc = {\"locator\":\"xpath=//button[contains(text(),'%s')]\",\"desc\":\"Button\"}

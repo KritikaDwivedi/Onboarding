@@ -4,21 +4,25 @@ import static com.qmetry.qaf.automation.step.CommonStep.clear;
 import static com.qmetry.qaf.automation.step.CommonStep.click;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 
+import org.hamcrest.Matchers;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.Select;
 
 import com.nest.utilities.NavigateToPageUtility;
 import com.nest.utilities.VerifyHeaderOfPageUtility;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
+import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
+import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyApplyLeaveForSingleDaySteps {
 	
 	NavigateToPageUtility navigate=new NavigateToPageUtility();
 	VerifyHeaderOfPageUtility head=new VerifyHeaderOfPageUtility();
 	public static String leaveType="";
+	public static String leaveDateFrom="";
+	public static String leaveDateTo="";
 	/**
 	 * @param searchTerm
 	 *            : search term to be searched
@@ -45,16 +49,18 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 	@QAFTestStep(description = "select Leave from date as {0} and to date as {1}")
 	public void selectLeaveDates(String dateFrom, String dateTo) throws InterruptedException{
 		// step implementation
+		leaveDateFrom=dateFrom;
+		leaveDateTo=dateTo;
 		if (leaveType.equals("Special"))
-		{
+		{	
 			click("applyLeave.specialFromDate.txt.loc");
 			clear("applyLeave.specialFromDate.txt.loc");
 			sendKeys(dateFrom, "applyLeave.specialFromDate.txt.loc");
-			Thread.sleep(15000);
+			Thread.sleep(2000);
 			click("applyLeave.specialToDate.txt.loc");
 			clear("applyLeave.specialToDate.txt.loc");
 			sendKeys(dateTo, "applyLeave.specialToDate.txt.loc");
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 		}
 		else if (leaveType.equals("PTO"))
 		{
@@ -83,7 +89,8 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 			reasonType.click();
 			if (reason.equals("Other"))
 			{
-				Thread.sleep(2000);
+//				Thread.sleep(2000);
+				CommonStep.waitForPresent("applyLeave.OtherOptions.txt.loc", 2000);
 				click("applyLeave.OtherOptions.txt.loc");
 				sendKeys(comment, "applyLeave.OtherOptions.txt.loc");
 				Thread.sleep(1000);
@@ -107,12 +114,49 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 	}
 	
 	@QAFTestStep(description = "clicks on Apply button")
-	public void applyClick(){
+	public void applyClick() throws InterruptedException{
 		// step implementation
 		if (leaveType.equals("Special"))
 			click("applyLeave.specialApply.btn.loc");
 		else if (leaveType.equals("PTO"))
 			click("applyLeave.apply.btn.loc");
+		Thread.sleep(15000);
+	}
+	
+	@QAFTestStep(description = "applied leave should be displayed correctly on My Leave List page")
+	public void verifyAppliedLeave() throws InterruptedException{
+		// step implementation
+		
+		
+//		QAFExtendedWebElement leaveDate=new QAFExtendedWebElement((ConfigurationManager.getBundle().getString("myLeave.leaveDate.radiobtn.loc")));
+		Thread.sleep(5000);
+		click("myLeave.leaveDate.radiobtn.loc");
+		
+		click("myLeave.leaveFrom.txt.loc");
+		clear("myLeave.leaveFrom.txt.loc");
+		sendKeys(leaveDateFrom, "myLeave.leaveFrom.txt.loc");
+		Thread.sleep(5000);
+		
+		click("myLeave.leaveTo.txt.loc");
+		clear("myLeave.leaveTo.txt.loc");
+		sendKeys(leaveDateTo, "myLeave.leaveTo.txt.loc");
+		Thread.sleep(5000);
+		
+		click("myLeave.search.btn.loc");
+		Thread.sleep(5000);
+		
+		String myLeaveDuration=CommonStep.getText("myLeave.leaveDuration.txt.loc");
+		if(leaveDateFrom.equals(leaveDateTo))
+		{
+			Validator.verifyThat("1", Matchers.containsString(myLeaveDuration));
+		}
+		else
+		{
+			int totalWorkingDays=NestVerifyApplyLeaveForMultipleDaysIncludingHolidaySteps.workingDays;
+			Validator.verifyThat(myLeaveDuration, Matchers.containsString(Integer.toString(totalWorkingDays)));
+		}
+		
+		
 	}
 	
 }

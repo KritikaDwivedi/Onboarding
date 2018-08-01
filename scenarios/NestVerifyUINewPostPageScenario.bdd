@@ -8,7 +8,7 @@
 #	When user turns on 'Manager View'
 #	And navigates to 'Publisher' and 'My Posts'
 #	Then title of page should be 'My Posts'
-#	When user clicks on Create button on My Posts page
+#	When user clicks on 'Create' button
 #	Then breadcrumb should be 'Home  / Publisher  / My Posts'
 #	And text fields should be present Title, Post URL, Image URL, Description
 #	And two dropdowns should be present Category and Location

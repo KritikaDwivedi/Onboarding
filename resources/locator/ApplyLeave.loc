@@ -10,4 +10,5 @@ applyLeave.reason.dropdown.loc = {\"locator\":\"xpath=//div[text()='Reason for L
 applyLeave.reasonOptions.dropdown.loc = {\"locator\":\"xpath=//div[text()='Reason for Leave']/following-sibling::div/button/following-sibling::ul//a[text()='%s']\",\"desc\":\"Reason dopdown on Apply Leave page\"}
 applyLeave.OtherOptions.txt.loc = {\"locator\":\"xpath=//div[text()='Reason for Leave']/following-sibling::div[text()='Other']/following-sibling::input\",\"desc\":\"Other Reason textbox on Apply Leave page\"}
 applyLeave.halfDayOrFullDay.radiobtn.loc = {\"locator\":\"xpath=//span[text()='%s']\",\"desc\":\"First half, second half or full day leave section radiobuttons on Apply Leave page\"}
-applyLeave.apply.btn.loc = {\"locator\":\"xpath=//button[text()='Apply']\",\"desc\":\"Other Reason textbox on Apply Leave page\"}
+applyLeave.apply.btn.loc = {\"locator\":\"xpath=//button[text()='Apply']\",\"desc\":\"Apply button\"}
+applyLeave.totalLeave.txt.loc = {\"locator\":\"xpath=//span[contains(text(),'Total Leave(s)')]/parent::li\",\"desc\":\"Total leave count on Apply Leave page\"}
