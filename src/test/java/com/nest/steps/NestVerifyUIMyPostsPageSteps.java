@@ -2,18 +2,17 @@ package com.nest.steps;
 
 import static com.qmetry.qaf.automation.step.CommonStep.click;
 
+import java.awt.AWTException;
+
 import org.hamcrest.Matchers;
 
-import com.nest.utilities.NavigateToPageUtility;
-import com.nest.utilities.VerifyHeaderOfPageUtility;
+import com.nest.utilities.CommonUtils;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyUIMyPostsPageSteps {
 	
-	NavigateToPageUtility navigate=new NavigateToPageUtility();
-	VerifyHeaderOfPageUtility head=new VerifyHeaderOfPageUtility();
 	public static String userView="My View";
 	/**
 	 * @param searchTerm
@@ -25,19 +24,28 @@ public class NestVerifyUIMyPostsPageSteps {
 		// step implementation
 		userView=view;
 		click("home.view.btn.loc");
-		Thread.sleep(20000);
+		CommonUtils.waitForPageToLoad(35000);
 	}
 	
 	@QAFTestStep(description = "navigates to {0} and {1}")
 	public void navigationToPage(String menuOption, String subMenuOption) throws InterruptedException
 	{	// step implementation
-		navigate.navigationToMenuAndSubMenu(userView, menuOption, subMenuOption);
+		CommonUtils.navigationToMenuAndSubMenu(userView, menuOption, subMenuOption);
+//		CommonUtils.waitForPageToLoad(5000);
+	}
+	
+	@QAFTestStep(description = "navigates to {0} and {1} and {2}")
+	public void navigationToSubPage(String menuOption, String subMenuOption, String subMenuOption2) throws InterruptedException, AWTException
+	{	// step implementation
+		CommonUtils.navigationToMenuAndSubMenu(userView, menuOption, subMenuOption);
+		CommonUtils.navigationToSubMenuAndSubMenu2(userView, subMenuOption2);
+//		CommonUtils.waitForPageToLoad(5000);
 	}
 	
 	@QAFTestStep(description = "title of page should be {0}")
-	public void verifyTitileOfSubMenuPage(String title) throws InterruptedException {
+	public void verifyTitileOfSubMenuPage(String title) throws InterruptedException, AWTException {
 		// step implementation
-		head.verifyHeaderOfPage(title);
+		CommonUtils.verifyTitleOfPage(title);
 	}
 	
 	@QAFTestStep(description = "navigation for the page should be {0}")
@@ -48,33 +56,33 @@ public class NestVerifyUIMyPostsPageSteps {
 		Validator.verifyThat(navigationText1+navigationText2, Matchers.containsString(title));
 	}
 	
-	@QAFTestStep(description = "two date picker should be present with label From and To")
+	@QAFTestStep(description = "two date picker should be present with label from and to")
 	public void verifyMyPostDateLabels(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.datefrom.txt.loc");
 		CommonStep.verifyPresent("myPosts.dateto.txt.loc");
 	}
 	
-	@QAFTestStep(description = "one text field should be present with label Keyword")
+	@QAFTestStep(description = "one text field should be present with label keyword")
 	public void verifyMyPostKeywordTextfield(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.keyword.txt.loc");
 	}
 	
-	@QAFTestStep(description = "dropdown should be present for Category")
+	@QAFTestStep(description = "dropdown should be present for category")
 	public void verifyMyPostCategoryDropdown(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.category.dropdown.loc");
 	}
 	
-	@QAFTestStep(description = "two Buttons should be present for Search and Reset")
+	@QAFTestStep(description = "two buttons should be present for search and reset")
 	public void verifyMyPostSearchAndResetButtons(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.search.btn.loc");
 		CommonStep.verifyPresent("myPosts.reset.btn.loc");
 	}
 	
-	@QAFTestStep(description = "table should be present to show search results with columns Title, Category, Posted on, Action")
+	@QAFTestStep(description = "table should be present to show search results with columns title, category, posted on, action")
 	public void verifyMyPostTableToDisplaySearchResult(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.searchResult.tbl.loc");
@@ -105,7 +113,7 @@ public class NestVerifyUIMyPostsPageSteps {
 		CommonStep.verifyPresent("myPosts.delete.btn.loc");
 	}
 	
-	@QAFTestStep(description = "New Post Button should be present on just below the table")
+	@QAFTestStep(description = "new post button should be present on just below the table")
 	public void verifyMyPostCreateButton(){
 		// step implementation
 		CommonStep.verifyPresent("myPosts.createPost.btn.loc");

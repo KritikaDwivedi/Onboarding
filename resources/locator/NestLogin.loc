@@ -1,3 +1,3 @@
 login.username.txt.loc = {\"locator\":\"id=username\",\"desc\":\"Username textbox on Nest Login Page\"}  
 login.password.txt.loc = {\"locator\":\"id=password\",\"desc\":\"Password textbox on Nest Login Page\"}
-login.loginbtn.btn.loc = {\"locator\":\"xpath=//button[@type='submit']\",\"desc\":\"Login button on Nest Login Page\"}
+login.loginbtn.btn.loc = {\"locator\":\"xpath=//button[text()=' LOGIN']\",\"desc\":\"Login button on Nest Login Page\"}

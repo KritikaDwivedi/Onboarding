@@ -55,7 +55,7 @@ public class NestVerifyApplyLeaveForMultipleDaysIncludingHolidaySteps{
 	}
 	
 
-	@QAFTestStep(description = "total leave count should not include the holidays on Apply Leave page")
+	@QAFTestStep(description = "total leave count should not include the holidays on apply leave page")
 	public void verifyLeaveCount(){
 		// step implementation
 		String totalLeaves=CommonStep.getText("applyLeave.totalLeave.txt.loc");

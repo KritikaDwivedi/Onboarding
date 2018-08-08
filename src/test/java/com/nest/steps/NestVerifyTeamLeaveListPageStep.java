@@ -18,7 +18,7 @@ public class NestVerifyTeamLeaveListPageStep {
 		}
 	}
 	
-	@QAFTestStep(description = "there should be Submit and Approve All button on the Team Leave List page")
+	@QAFTestStep(description = "there should be submit and approve all button on the team leave list page")
 	public void verifyTeamLeaveListButtons(){
 		// step implementation
 		verifyPresent("teamLeaveList.submit.btn.loc");

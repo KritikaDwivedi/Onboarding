@@ -1,0 +1,10 @@
+brightSpark.cardType.btn.loc = {\"locator\":\"xpath=//div[text()='Select a Card']//following-sibling::div//div[2]\",\"desc\":\"Seelect card type\"}
+brightSpark.nominee.dropdown.loc = {\"locator\":\"xpath=//div[text()='Nominee']//following-sibling::div//button\",\"desc\":\"Nominee dropdown\"}
+brightSpark.nomineeFilter.txt.loc = {\"locator\":\"xpath=//div[text()='Nominee']//following-sibling::div//button//following-sibling::ul//input\",\"desc\":\"Nominee filter text box\"}
+brightSpark.project.dropdown.loc = {\"locator\":\"xpath=//div[text()='Project']//following-sibling::div//button\",\"desc\":\"Project dropdown\"}
+brightSpark.projectFlter.txt.loc = {\"locator\":\"xpath=//div[text()='Project']//following-sibling::div//button//following-sibling::ul//input\",\"desc\":\"Project filter text box\"}
+brightSpark.facedSituations.txt.loc = {\"locator\":\"xpath=//div[text()='Challenging situations faced']//following-sibling::textarea\",\"desc\":\"Challenging situations faced text area\"}
+brightSpark.solutionsProvided.txt.loc = {\"locator\":\"xpath=//div[text()='Solutions provided/Situation handling']//following-sibling::textarea\",\"desc\":\"Solutions provided and Situation handling text area\"}
+brightSpark.benifitsAccrued.txt.loc = {\"locator\":\"xpath=//div[text()='Benefits accrued']//following-sibling::textarea\",\"desc\":\"Benifits accrued text area\"}
+brightSpark.rationale.txt.loc = {\"locator\":\"xpath=//div[text()='Rationale for Nomination']//following-sibling::textarea\",\"desc\":\"Rationale for Nomination text area\"}
+brightSpark.post.btn.loc = {\"locator\":\"xpath=//button[text()=' Post ']\",\"desc\":\"Post button\"}

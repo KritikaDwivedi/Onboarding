@@ -1,0 +1,7 @@
+viewTravelRequest.requestId.txt.loc = {\"locator\":\"xpath=//table//tr[1]//td[1]\",\"desc\":\"Request Id on View Travel Request page\"}
+viewTravelRequest.travelPurpose.txt.loc = {\"locator\":\"xpath=//table//tr[1]//td[2]\",\"desc\":\"Travel purpose on View Travel Request page\"}
+viewTravelRequest.action.dropdown.loc = {\"locator\":\"xpath=//tr[contains(@ng-repeat,'travelRequest')][1]//td[9]//button\",\"desc\":\"Action dropdown on View Travel Request page\"}
+viewTravelRequest.actionOptions.dropdown.loc = {\"locator\":\"xpath=//body//ul[1]//a[contains(@ng-click,'travelAction') and text()='%s']\",\"desc\":\"Action dropdown options on View Travel Request page\"}
+viewTravelRequest.comment.txt.loc = {\"locator\":\"xpath=//div[text()=' Comment']//following-sibling::textarea\",\"desc\":\"Comment text area while performing action on View Travel Request page\"}
+viewTravelRequest.confimation.msg.loc = {\"locator\":\"xpath=//*[@class='in_tost_section_type1']\",\"desc\":\"Confirmation message after performing action on View Travel Request page\"}
+viewTravelRequest.request.info.loc = {\"locator\":\"xpath=//*[contains(text(),'%s')]//p[contains(text(),'Travel Request No : %s')]\",\"desc\":\"Travel request info on View Travel Request page\"}

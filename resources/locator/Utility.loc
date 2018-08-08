@@ -1,2 +1,7 @@
-utility.heading.header.loc = {\"locator\":\"xpath=//div[contains(text(),'%s')]\",\"desc\":\"Heading of the page\"}
+utility.heading.header.loc = {\"locator\":\"xpath=//div[text()='%s']\",\"desc\":\"Heading of the page\"}
+utility.headingContains.header.loc = {\"locator\":\"xpath=//div[contains(text(),'%s')]\",\"desc\":\"Heading of the page\"}
 utility.button.btn.loc = {\"locator\":\"xpath=//button[contains(text(),'%s')]\",\"desc\":\"Button\"}
+utility.loader.img.loc=	{\"locator\":\"xpath=//div[@ng-show='loading']//div[3]\",\"desc\":\"Loader\"}
+utility.navigation.pane.loc={\"locator\":\"xpath=//span[text()='NAVIGATION']\",\"desc\":\"Navigation text on navigation pane\"}
+
+

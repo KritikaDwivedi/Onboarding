@@ -1,0 +1,4 @@
+viewAll.tab.lnk.loc = {\"locator\":\"xpath=//span[text()='%s']\",\"desc\":\"Expense or travel tab\"}
+viewAll.viewAll.lnk.loc = {\"locator\":\"xpath=//a[@ng-click='navigate(vm.viewAllLink)' and text()='View All']\",\"desc\":\"View All link\"}
+viewAll.home.lnk.loc = {\"locator\":\"xpath=//span[contains(text(),'Home')]\",\"desc\":\"Home link\"}
+

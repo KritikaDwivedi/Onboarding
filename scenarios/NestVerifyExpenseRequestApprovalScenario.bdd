@@ -1,0 +1,28 @@
+
+SCENARIO: QEO-4843_Nest expense approval functionality
+META-DATA: {"description":"Verify the functionality of expense request approval", "groups":["SMOKE"]}
+	Given user launches the application
+	When user enters user name as '${Login.Lead.username}' and password as '${Login.Lead.password}'
+	And clicks on the login button
+	Then user should land on the home page
+	And navigates to 'Reimbursement' and 'My Expense List'
+	Then title of page should be 'My Expense List'
+	When clicks on new expense button
+	Then title of page should be 'New Expense'
+	And fills the details for title as 'title' , expense date as '01-Aug-2018' , project as 'Other' if other then 'other' , expense category as '13102016' , expense amount as '5000'
+	And clicks on expense submit button
+	Then there should be a success message on successful submission of request
+	Then title of page should be 'My Expense List'
+	And clicks on logout button
+	Then user should land on the login page
+	When user enters user name as '${Login.Manager.username}' and password as '${Login.Manager.password}'
+	And clicks on the login button
+	Then user should land on the home page
+	When user turns on 'Manager View'
+	And navigates to 'Reimbursement' and 'Teams Reimbursement List'
+	And clicks on raised request by employee
+	Then title of page should be 'View Expense'
+	When manager enters comment as 'Approved' and clicks on approve button
+	Then manager should be able to approve the raised request
+END
+

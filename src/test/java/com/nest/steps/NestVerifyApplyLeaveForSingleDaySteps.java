@@ -6,9 +6,6 @@ import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 
 import org.hamcrest.Matchers;
 import org.openqa.selenium.JavascriptExecutor;
-
-import com.nest.utilities.NavigateToPageUtility;
-import com.nest.utilities.VerifyHeaderOfPageUtility;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
@@ -18,8 +15,6 @@ import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyApplyLeaveForSingleDaySteps {
 	
-	NavigateToPageUtility navigate=new NavigateToPageUtility();
-	VerifyHeaderOfPageUtility head=new VerifyHeaderOfPageUtility();
 	public static String leaveType="";
 	public static String leaveDateFrom="";
 	public static String leaveDateTo="";
@@ -29,7 +24,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 	 * @throws InterruptedException 
 	 */
 	
-	@QAFTestStep(description = "user selects Type of leave as {0} and if special then subtype as {1}")
+	@QAFTestStep(description = "user selects type of leave as {0} and if special then subtype as {1}")
 	public void selectLeaveType(String type, String subType) throws InterruptedException{
 		// step implementation
 		leaveType=type;
@@ -46,7 +41,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "select Leave from date as {0} and to date as {1}")
+	@QAFTestStep(description = "select leave from date as {0} and to date as {1}")
 	public void selectLeaveDates(String dateFrom, String dateTo) throws InterruptedException{
 		// step implementation
 		leaveDateFrom=dateFrom;
@@ -99,7 +94,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "selects {0} Leave")
+	@QAFTestStep(description = "selects {0} leave")
 	public void selectHalfOrFullDay(String day){
 		// step implementation
 		if (leaveType.equals("Special"))
@@ -113,7 +108,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "clicks on Apply button")
+	@QAFTestStep(description = "clicks on apply button")
 	public void applyClick() throws InterruptedException{
 		// step implementation
 		if (leaveType.equals("Special"))
@@ -123,7 +118,13 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		Thread.sleep(15000);
 	}
 	
-	@QAFTestStep(description = "applied leave should be displayed correctly on My Leave List page")
+	@QAFTestStep(description = "leave should be applied successfully")
+	public void applyConfirmation() throws InterruptedException{
+		// step implementation
+		CommonStep.verifyPresent("applyLeave.applyConfirmation.info.loc");
+	}
+	
+	@QAFTestStep(description = "applied leave should be displayed correctly on my leave list page")
 	public void verifyAppliedLeave() throws InterruptedException{
 		// step implementation
 		

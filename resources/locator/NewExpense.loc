@@ -13,4 +13,6 @@ newExpense.errorProject.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-
 newExpense.errorCategory.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'category') and @uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Category text box on New Expense page\"}
 newExpense.errorProjectOther.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'project')]//following-sibling::input[@uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Other Project on New Expense page\"}
 newExpense.attach.btn.loc = {\"locator\":\"xpath=//div[contains(text(),'Attachments')]/following-sibling::div\",\"desc\":\"Attach button on New Expense page\"}
-
+newExpense.attachment.lnk.loc = {\"locator\":\"xpath=//a[text()='%s']\",\"desc\":\"Attachments on New Expense page\"}
+newExpense.successfulSubmission.msg.loc = {\"locator\":\"xpath=//div[text()='Expense submitted successfully.']\",\"desc\":\"Expense request successful submission message on New Expense page\"}
+newExpense.categoryOptions.dropdown.loc = {\"locator\":\"xpath=//td[3]//li\",\"desc\":\"Category options on New Expense page\"}

@@ -34,5 +34,4 @@ public class nestLogin extends WebDriverBaseTestPage<WebDriverTestPage>{
 		// TODO Auto-generated method stub
 		
 	}
-
 }
