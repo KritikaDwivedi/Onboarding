@@ -29,16 +29,16 @@ public class CommonUtils {
 		Robot robot = new Robot();
 		try {
 			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-	        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-	        Thread.sleep(5000);
-	        button.click();
+			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+			Thread.sleep(5000);
+			button.click();
 		}
 		catch(Exception e)
 		{
 			// Scroll Up using Robot class
-	        robot.keyPress(KeyEvent.VK_PAGE_UP);
-	        robot.keyRelease(KeyEvent.VK_PAGE_UP);
-	        Thread.sleep(5000);
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
+			Thread.sleep(5000);
 			button.click();
 		}
 		Thread.sleep(5000);
@@ -49,41 +49,41 @@ public class CommonUtils {
 		CommonStep.waitForVisible("utility.loader.img.loc",time);
 		CommonStep.waitForNotVisible("utility.loader.img.loc",time);
 	}
-	
-	//Comment:Scrolling to element
+
+	//Comment:Scrolling to locator
 	public static void scrollToViewString(String elem) throws AWTException, InterruptedException
 	{	Robot robot = new Robot();
-		try {
-			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-	        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-	        CommonStep.waitForVisible((String) elem);
-		}
-		catch(Exception e)
-		{
-			// Scroll Up using Robot class
-	        robot.keyPress(KeyEvent.VK_PAGE_UP);
-	        robot.keyRelease(KeyEvent.VK_PAGE_UP);
-	        CommonStep.waitForVisible((String) elem);
-		}
+	try {
+		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		CommonStep.waitForVisible((String) elem);
 	}
-	
-	//Comment:Scrolling to element
-		public static void scrollToViewQAFWebExtended(QAFExtendedWebElement elem) throws AWTException, InterruptedException
-		{	Robot robot = new Robot();
-			try {
-				// Scroll Up using Robot class
-		        robot.keyPress(KeyEvent.VK_PAGE_UP);
-		        robot.keyRelease(KeyEvent.VK_PAGE_UP);
-		        elem.waitForVisible();
-			}
-			catch(Exception e)
-			{
-				// Scroll Down using Robot class
-		        robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-		        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-		        elem.waitForVisible();
-			}
-		}
+	catch(Exception e)
+	{
+		// Scroll Up using Robot class
+		robot.keyPress(KeyEvent.VK_PAGE_UP);
+		robot.keyRelease(KeyEvent.VK_PAGE_UP);
+		CommonStep.waitForVisible((String) elem);
+	}
+	}
+
+	//Comment:Scrolling to QAFExtendedWebElement
+	public static void scrollToViewQAFWebExtended(QAFExtendedWebElement elem) throws AWTException, InterruptedException
+	{	Robot robot = new Robot();
+	try {
+		// Scroll Up using Robot class
+		robot.keyPress(KeyEvent.VK_PAGE_UP);
+		robot.keyRelease(KeyEvent.VK_PAGE_UP);
+		elem.waitForVisible();
+	}
+	catch(Exception e)
+	{
+		// Scroll Down using Robot class
+		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		elem.waitForVisible();
+	}
+	}
 
 	//Comment: Method to navigate from menu to sub menu
 	public static void navigationToMenuAndSubMenu(String view, String menuOption, String subMenuOption) throws InterruptedException {
@@ -92,7 +92,7 @@ public class CommonUtils {
 		JavascriptExecutor js= (JavascriptExecutor)driver;
 		click("home.navigation.pane.loc");
 		CommonStep.waitForVisible("utility.navigation.pane.loc");
-		
+
 		QAFExtendedWebElement menu= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("home.menu.options.loc"),view,menuOption));
 		try
 		{
@@ -119,16 +119,16 @@ public class CommonUtils {
 		}
 		Thread.sleep(1000);
 	}
-	
+
 	//Comment: Method to navigate from sub menu to sub menu 2
 	public static void navigationToSubMenuAndSubMenu2(String view, String subMenuOption2) throws InterruptedException, AWTException {
 		// step implementation
 		QAFExtendedWebElement subMenu2= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("home.submenu2.options.loc"),view,subMenuOption2));
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-        Thread.sleep(1000);
-        subMenu2.click();
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		Thread.sleep(1000);
+		subMenu2.click();
 	}
 
 	//Comment: Method to verify page title
@@ -137,18 +137,10 @@ public class CommonUtils {
 		QAFExtendedWebElement header;
 		try
 		{
-		header= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("utility.headingContains.header.loc"),title));
-		scrollToViewQAFWebExtended(header);
+			header= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("utility.headingContains.header.loc"),title));
+			scrollToViewQAFWebExtended(header);
 		}
-//		try {
-//			header.isDisplayed();
-//		}
-//		catch(Exception e)
-//		{
-//			JavascriptExecutor js= (JavascriptExecutor)new WebDriverTestBase().getDriver();
-//			js.executeScript("arguments[0].scrollIntoView(true);", header);
-//			header.isDisplayed();
-//		}
+
 		catch(Exception e)
 		{
 			header= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("utility.heading.header.loc"),title));
@@ -161,11 +153,9 @@ public class CommonUtils {
 	public static void datePicker(String date) throws InterruptedException, ParseException{
 		// step implementation
 		String dateTime =date;
-		System.out.println("datetime is "+dateTime);
 
 		//Split the date time to get only the date part
 		String date_dd_MM_yyyy[] = (dateTime.split(" ")[0]).split("-");
-		System.out.println("day is "+ date_dd_MM_yyyy[0]);
 
 		//get the year difference between current year and year to set in calander
 		int yearDiff = Integer.parseInt(date_dd_MM_yyyy[2])- Calendar.getInstance().get(Calendar.YEAR);
@@ -211,10 +201,10 @@ public class CommonUtils {
 		String time[]=(dateTime.split(" ")[1]).split(":");
 		if(dateTime.split(" ")[2].equals("AM"))
 		{	if(Integer.parseInt(time[0])!=12)
-		{
+			{
 			for(int i=0;i<Integer.parseInt(time[0]);i++)
 				CommonStep.click("addTravelRequest.hrsIncrement.lnk.loc");
-		}	
+			}	
 		}
 		else
 		{	
@@ -223,8 +213,6 @@ public class CommonUtils {
 				hrdiff=12;
 			for(int i=0;i<hrdiff;i++)
 				CommonStep.click("addTravelRequest.hrsDecrement.lnk.loc");
-			{
-			}
 
 			if(Integer.parseInt(time[1])!=00)
 			{
