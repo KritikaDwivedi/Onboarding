@@ -1,0 +1,44 @@
+
+SCENARIO: QEO-4838_Nest apply single day leave functionality
+META-DATA: {"description":"Verify the Apply Leave functionality when user applies for a single day Leave", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'Leave' and 'Apply Leave'
+	Then title of page should be 'Available Leave '
+	When I select type of leave as 'Special' and if special then subtype as 'Wedding'
+	And I select leave from date as '31/12/2018' and to date as '31/12/2018'
+	And I select the leave reason as 'Other' and if other then comment as 'other'
+	And I select 'Full Day' leave 
+	And I click on apply button
+	Then title of page should be 'My Leave List'
+END
+
+
+SCENARIO: QEO-4839_Nest apply leave functionality including holidays
+META-DATA: {"description":"Verify the Apply Leave functionality when user applies for Leave including Holiday", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'Leave' and 'Apply Leave'
+	Then title of page should be 'Available Leave '
+	When I select type of leave as 'PTO' and if special then subtype as ''
+	And I select leave from date as '01-June-2018' and to date as '08-June-2018'
+	And I calculate the days between from and to date
+	And I select the leave reason as 'Other' and if other then comment as 'other'
+	Then total leave count should not include the holidays on apply leave page
+	And I click on apply button
+	Then leave should be applied successfully
+	And applied leave should be displayed correctly on my leave list page
+END
+
+
+SCENARIO: QEO-4840_Nest team leave list page UI
+META-DATA: {"description":"Verify the Team Leave List page", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'Leave' and 'Team Leave List'
+	Then title of page should be 'Team Leave List'
+	And following columns should be present '${Leave.columns}' on 'Leave' page
+	And there should be submit and approve all button on the team leave list page
+END
+

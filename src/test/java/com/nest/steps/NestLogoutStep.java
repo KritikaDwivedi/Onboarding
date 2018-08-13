@@ -1,6 +1,7 @@
 package com.nest.steps;
 
 import com.nest.utilities.CommonUtils;
+import com.qmetry.qaf.automation.core.QAFTestBase;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
@@ -10,15 +11,16 @@ public class NestLogoutStep {
 	 *            : search term to be searched
 	 * @throws InterruptedException 
 	 */
-	@QAFTestStep(description = "clicks on logout button")
+	@QAFTestStep(description = "I click on logout button")
 	public void logoutButtonClick() {
 		// step implementation
+		CommonStep.waitForVisible("home.logout.btn.loc");
 		CommonStep.click("home.logout.btn.loc");
 	}		
-	@QAFTestStep(description = "user should land on the login page")
+	@QAFTestStep(description = "I should land on the login page")
 	public void verifyNestLoginPage() {
 		// step implementation
 		CommonUtils.waitForPageToLoad(10000);
-		CommonStep.verifyPresent("login.username.txt.loc");
+		CommonStep.verifyVisible("login.username.txt.loc");
 	}
 }

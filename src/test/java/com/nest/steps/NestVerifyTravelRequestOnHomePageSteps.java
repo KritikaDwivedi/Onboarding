@@ -14,7 +14,7 @@ public class NestVerifyTravelRequestOnHomePageSteps {
 	public static String requestId;
 	public static String travelPurpose;
 	
-	@QAFTestStep(description = "user selects the {0} request row in the travel request tab")
+	@QAFTestStep(description = "I select the {0} request row in the travel request tab")
 	public static void getTravelRequest(String request) {
 		requestId=CommonStep.getText("viewTravelRequest.requestId.txt.loc");
 		travelPurpose=CommonStep.getText("viewTravelRequest.travelPurpose.txt.loc");
@@ -32,7 +32,7 @@ public class NestVerifyTravelRequestOnHomePageSteps {
 		CommonStep.click("viewTravelRequest.action.dropdown.loc");
 	}
 	
-	@QAFTestStep(description = "supervisor selects {0} action")
+	@QAFTestStep(description = "I select {0} action")
 	public static void travelTakeAction(String actionToBeTaken) {
 		CommonStep.waitForNotVisible("viewTravelRequest.confimation.msg.loc");
 		CommonStep.click("viewTravelRequest.action.dropdown.loc");
@@ -40,7 +40,7 @@ public class NestVerifyTravelRequestOnHomePageSteps {
 		action.click();
 		}
 	
-	@QAFTestStep(description = "provides comment as {0} and clicks on submit button and again clicks on submit button")
+	@QAFTestStep(description = "I provide comment as {0} and click on submit button and again click on submit button")
 	public static void travelRequestAction(String comment) throws InterruptedException, AWTException {
 		CommonStep.sendKeys(comment,"viewTravelRequest.comment.txt.loc");
 		CommonUtils.buttonClick("Submit");
@@ -52,14 +52,14 @@ public class NestVerifyTravelRequestOnHomePageSteps {
 		
 		}
 	
-	@QAFTestStep(description = "supervisor should be able to {0} the request")
+	@QAFTestStep(description = "I should be able to {0} the request")
 	public static void verifyActionConfirmation(){
 		CommonStep.verifyPresent("viewTravelRequest.confimation.msg.loc");
 		String request=CommonStep.getText("viewTravelRequest.requestId.txt.loc");
 		Validator.verifyTrue(!request.equals(requestId), "Action is not performed successfully", "Action is performed successfully");
 		}
 	
-	@QAFTestStep(description = "supervisor clicks on request")
+	@QAFTestStep(description = "I click on request")
 	public static void viewTravelRequest() {
 		CommonStep.click("viewTravelRequest.travelPurpose.txt.loc");
 		

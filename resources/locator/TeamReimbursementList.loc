@@ -1,4 +1,4 @@
-teamReimbursement.title.lnk.loc = {\"locator\":\"xpath=//tbody/tr[1]/td[contains(text(),'%s')]\",\"desc\":\"First Title on Team Reimbursement List page\"}
-teamReimbursement.approve.btn.loc = {\"locator\":\"xpath=//button[text()=' Approve ']\",\"desc\":\"Approve button on Team Reimbursement List page\"}
-teamReimbursement.comment.txt.loc = {\"locator\":\"xpath=//ul[@class='progressbar']//li[2]//div/following-sibling::p[2]/following-sibling::div//textarea\",\"desc\":\"Comment area on Team Reimbursement List page\"}
-teamReimbursement.approveSuccess.msg.loc = {\"locator\":\"xpath=//div[text()='Request approved successfully']\",\"desc\":\"Approval success message on Team Reimbursement List page\"}
+teamReimbursement.title.lnk.loc = {"locator":"xpath=//tbody/tr[1]/td[contains(text(),'%s')]","desc":"First Title on Team Reimbursement List page"}
+teamReimbursement.approve.btn.loc = {"locator":"xpath=//button[text()=' Approve ']","desc":"Approve button on Team Reimbursement List page"}
+teamReimbursement.comment.txt.loc = {"locator":"xpath=//ul[@class='progressbar']//li[2]//div/following-sibling::p[2]/following-sibling::div//textarea","desc":"Comment area on Team Reimbursement List page"}
+teamReimbursement.approveSuccess.msg.loc = {"locator":"xpath=//div[text()='Request approved successfully']","desc":"Approval success message on Team Reimbursement List page"}

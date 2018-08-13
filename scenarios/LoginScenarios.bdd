@@ -1,0 +1,29 @@
+
+SCENARIO: QEO-4833_Nest valid login functionality
+META-DATA: {"description":"Verify the functionality of Login when Username and Password is valid", "groups":["SMOKE"]}
+	Given I launch the application
+	When I enter user name as '${Login.Lead.username}' and password as '${Login.Lead.password}'
+	And I click on the login button
+	Then I should land on the home page
+END
+
+
+SCENARIO: QEO-4834_Nest blank login functionality
+META-DATA: {"description":"Verify the functionality of the Login when Username and Password field is empty", "groups":["SMOKE"]}
+	Given I launch the application
+	When I enter user name as '' and password as ''
+	And I click on the login button
+	Then I should get error message 'Username is required'
+END
+
+
+SCENARIO: QEO-4835_Nest logout functionality
+META-DATA: {"description":"Verify Logout functionality", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I click on the login button
+	Then I should land on the home page
+	And I click on logout button
+	Then I should land on the login page
+END
+

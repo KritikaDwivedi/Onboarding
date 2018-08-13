@@ -1,0 +1,13 @@
+
+SCENARIO: QEO-4846_Nest view all link
+META-DATA: {"description":"Verify the functionality of the View All link on the request section", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I turn on 'Manager View'
+	And I click on View All link in the Request section
+	Then I should be navigated to 'Team Leave List'
+	When 'Travel' tab is selected 
+	Then I should be navigated to 'Travel Requests'
+	When 'Expense' tab is selected
+	Then I should be navigated to 'Team Reimbursement List'
+END

@@ -1,9 +1,5 @@
 package com.nest.steps;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
@@ -19,7 +15,7 @@ public class NestVerifyExpenseFunctionalityWithAttachmentSteps {
 	 */
 	public static String fileName="";
 	
-	@QAFTestStep(description = "user clicks on browse button")
+	@QAFTestStep(description = "I click on browse button")
 	public void expenseBrowseButtonClick() throws InterruptedException {
 		// step implementation
 		Thread.sleep(5000);
@@ -27,31 +23,15 @@ public class NestVerifyExpenseFunctionalityWithAttachmentSteps {
 		Thread.sleep(15000);
 	}
 
-	@QAFTestStep(description = "uploads the file {0}")
+	@QAFTestStep(description = "I upload the file {0}")
 	public void expenseFileUpload(String filepath) throws InterruptedException, IOException {
 		// step implementation
-		try {
-			System.out.println("file path is"+filepath);
-			String file[]=filepath.split("\\\\");
+			CommonStep.waitForVisible("newExpense.attach.btn.loc");
+			String file[]=filepath.split("//");
 			int len=file.length;
 			fileName=file[len-1];
-			System.out.println("filename is "+fileName);
-			String filepath2=filepath.replace("\\\\", "\\");
-			StringSelection stringSelection = new StringSelection(filepath2);
-			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-			//native key strokes for CTRL, V and ENTER keys
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(15000);
-		}
-		catch (Exception exp) {
-			exp.printStackTrace();
-		}
+			QAFExtendedWebElement upload= new QAFExtendedWebElement("newExpense.uploadWindow.window.loc");
+			upload.sendKeys(filepath);
 	}
 	
 	@QAFTestStep(description = "attachment should be successfully attached for valid size and format")

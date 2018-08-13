@@ -1,0 +1,115 @@
+
+SCENARIO: QEO-4847_Nest bright spark nomination
+META-DATA: {"description":"Verify nomination functionality of bright spark", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Bright Spark'
+	And I nominate 'virat kohali' for 'Bright Spark' and enter 'random' data
+	And title of page should be 'My Nominations'
+	And breadcrumb should be Home/R & R/My R & R
+	And following columns should be present '${brightSpark.column}' on 'Bright Spark' page
+	Then I expand icon should be there before Nominee name if he is nominated for more than one rewards
+	And if status is approved then it should come in green color, yellow for pending and red for rejected
+	And pagination should be present at lower right corner
+END
+
+
+SCENARIO: QEO-4848_Nest bright spark nomination with Reporting manager view
+META-DATA: {"description":"Verify nomination functionality of bright spark with reporting manager view", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Bright Spark'
+	And I nominate 'virat kohali' for 'Bright Spark' and enter 'random' data 
+	And title of page should be 'My Nominations'
+	And I click on logout button
+	Then I should land on the login page
+	When I login with '${Login.Manager.username}' and '${Login.Manager.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'R & R' and 'R & R Requests'
+	And I open the raised R & R request with status as 'Pending' for "Reporting Manager"
+	Then there should be Bright Spark request with Approve and Reject buttons
+END
+
+
+SCENARIO: QEO-4849_Nest bright spark nomination with Reviewing manager view
+META-DATA: {"description":"Verify nomination functionality of bright spark with reviewing manager view", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Bright Spark'
+	And I nominate 'virat kohali' for 'Bright Spark' and enter 'random' data 
+	And title of page should be 'My Nominations'
+	And I click on logout button
+	Then I should land on the login page
+	When I login with '${Login.DeliveryManager.username}' and '${Login.DeliveryManager.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'R & R' and 'R & R Requests'
+	And I open the raised R & R request with status as 'Pending' for 'Delivery Manager'
+	Then there should be Bright Spark request with Approve and Reject buttons
+END
+
+
+SCENARIO: QEO-4850_Nest bright spark rejection functionality
+META-DATA: {"description":"Verify rejection functionality of bright spark", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Bright Spark'
+	And I nominate 'virat kohali' for 'Bright Spark' and enter 'random' data 
+	And title of page should be 'My Nominations'
+	And I click on logout button
+	Then I should land on the login page
+	And I 'reject' the request when logged in as 'Reporting Manager' with '${Login.Manager.username}' and '${Login.Manager.password}'
+	And I click on logout button
+	Then I should land on the login page
+	When I login with '${Login.HR.username}' and '${Login.HR.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'R & R' and 'R & R Requests'
+	And I open the raised R & R request with status as 'Rejected' for 'Reporting Manager'
+	Then title of page should be 'Bright Spark'
+	And there should be two rows containing '${rnr.firstRow}' and '${rnr.secondRow}'
+	And manager status should be 'Rejected'
+	And there should be value addition and review comment block containing '${rnr.valueAddtions}' and '${rnr.reviewComments}'
+	And reward card image should be displayed in reward block
+	And back button should be there
+END
+
+
+SCENARIO: QEO-4851_Nest bright spark approval functionality
+META-DATA: {"description":"Verify approval functionality of bright spark", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Bright Spark'
+	And I nominate 'virat kohali' for 'Bright Spark' and enter 'random' data 
+	And title of page should be 'My Nominations'
+	And I click on logout button
+	Then I should land on the login page
+	And I 'approve' the request when logged in as 'Reporting Manager' with '${Login.Manager.username}' and '${Login.Manager.password}'
+	And I open the raised R & R request with status as 'Approved' for 'Reporting Manager'
+	Then title of page should be 'Bright Spark'
+	And there should be two rows containing '${rnr.firstRow}' and '${rnr.secondRow}'
+	And manager status should be 'Approved'
+	And there should be value addition and review comment block containing '${rnr.valueAddtions}' and '${rnr.reviewComments}'
+	And reward card image should be displayed in reward block
+	And back button should be there
+END
+
+
+SCENARIO: QEO-4852_Nest pat on back nomination functionality
+META-DATA: {"description":"Verify nomination functionality of pat on back", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'R & R' and 'Nominate' and 'Pat On Back'
+	And I nominate 'virat kohali' for 'Pat On Back' and enter 'random' data
+	And title of page should be 'My Nominations'
+	And I click on logout button
+	Then I should land on the login page
+	When I login with '${Login.Manager.username}' and '${Login.Manager.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'R & R' and 'R & R Requests'
+	Then the raised R & R request with status as 'Pending' for 'Reporting manager' should be present
+	When I click on logout button
+	Then I should land on the login page
+	When I login with '${Login.DeliveryManager.username}' and '${Login.DeliveryManager.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'R & R' and 'R & R Requests'
+	Then the raised R & R request with status as 'Pending' for 'Delivery Manager' should be present
+END

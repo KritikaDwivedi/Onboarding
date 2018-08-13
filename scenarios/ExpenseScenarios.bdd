@@ -1,0 +1,50 @@
+
+#SCENARIO: QEO-4841_Nest new expense functionality with invalid data
+#META-DATA: {"description":"Verify new expense functionality with invalid details", "groups":["SMOKE"], "groups":["SMOKE"]}
+#	Given I launch the application
+#	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+#	And I navigate to 'Reimbursement' and 'My Expense List'
+#	Then title of page should be 'My Expense List'
+#	When I click on new expense button
+#	Then title of page should be 'New Expense'
+#	And I fill the 'invalid' details
+#	And I click on expense submit button
+#	Then there should be an error message on the form with focus
+#END
+
+
+SCENARIO: QEO-4842_Nest new expense functionality with attachment
+META-DATA: {"description":"Verify new expense functionality with attachment", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+	And I navigate to 'Reimbursement' and 'My Expense List'
+	Then title of page should be 'My Expense List'
+	When I click on new expense button
+	And I upload the file '${expense.attachmentPath}'
+	Then attachment should be successfully attached for valid size and format
+END
+
+
+#SCENARIO: QEO-4843_Nest expense approval functionality
+#META-DATA: {"description":"Verify the functionality of expense request approval", "groups":["SMOKE"]}
+#	Given I launch the application
+#	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
+#	And I navigate to 'Reimbursement' and 'My Expense List'
+#	Then title of page should be 'My Expense List'
+#	When I click on new expense button
+#	Then title of page should be 'New Expense'
+#	And I fill the 'valid' details
+#	And I click on expense submit button
+#	Then there should be a success message on successful submission of request
+#	And title of page should be 'My Expense List'
+#	When I click on logout button
+#	Then I should land on the login page
+#	When I login with '${Login.Manager.username}' and '${Login.Manager.password}'
+#	And I turn on 'Manager View'
+#	And I navigate to 'Reimbursement' and 'Teams Reimbursement List'
+#	And I click on raised request by employee
+#	Then title of page should be 'View Expense'
+#	When I enter comment as 'Approved' and click on approve button
+#	Then I should be able to approve the raised request
+#END
+

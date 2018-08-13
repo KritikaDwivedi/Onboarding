@@ -1,46 +1,47 @@
-addTravelRequest.purposeOfTravel.txt.loc = {\"locator\":\"xpath=//div[contains(text(),'Purpose of Travel')]/following-sibling::input[contains(@ng-model,'purposeOfTravel')]\",\"desc\":\"Purpose of Travel text box\"}
-addTravelRequest.type.dropdown.loc = {\"locator\":\"xpath=//div[text()='Type']/following-sibling::div/button\",\"desc\":\"Type of travel text box\"}
-addTravelRequest.typeOptions.dropdown.loc = {\"locator\":\"xpath=//a[text()='%s']\",\"desc\":\"Options for Type of travel text box\"}
+addTravelRequest.purposeOfTravel.txt.loc = {"locator":"xpath=//div[contains(text(),'Purpose of Travel')]/following-sibling::input[contains(@ng-model,'purposeOfTravel')]","desc":"Purpose of Travel text box"}
+addTravelRequest.type.dropdown.loc = {"locator":"xpath=//div[text()='Type']/following-sibling::div/button","desc":"Type of travel text box"}
+addTravelRequest.typeOptions.dropdown.loc = {"locator":"xpath=//a[text()='%s']","desc":"Options for Type of travel text box"}
 
-addTravelRequest.travelType.label.loc = {\"locator\":\"xpath=//div[text()='Travel Type']\",\"desc\":\"Travel Type label\"}
-addTravelRequest.travelTypeOptions.radiobtn.loc = {\"locator\":\"xpath=//div[text()='Travel Type']//following-sibling::label/span[contains(text(),'%s')]\",\"desc\":\"Travel Type radiobutton\"}
+addTravelRequest.travelType.label.loc = {"locator":"xpath=//div[text()='Travel Type']","desc":"Travel Type label"}
+addTravelRequest.travelTypeOptions.radiobtn.loc = {"locator":"xpath=//div[text()='Travel Type']//following-sibling::label/span[contains(text(),'%s')]","desc":"Travel Type radiobutton"}
 
-addTravelRequest.journeyFrom.dropdown.loc = {\"locator\":\"xpath=//div[text()='Journey From']/following-sibling::input[contains(@ng-model,'journeyFrom')]\",\"desc\":\"Journey from text box\"}
-addTravelRequest.journeyTo.dropdown.loc = {\"locator\":\"xpath=//div[text()='Journey To']/following-sibling::input[contains(@ng-model,'journeyTo')]\",\"desc\":\"Journey from text box\"}
-addTravelRequest.clientOrProject.txt.loc = {\"locator\":\"xpath=//div[text()=' Client / Project Name']//following-sibling::input\",\"desc\":\"Client or Project name\"}
+addTravelRequest.journeyFrom.dropdown.loc = {"locator":"xpath=//div[text()='Journey From']/following-sibling::input[contains(@ng-model,'journeyFrom')]","desc":"Journey from text box"}
+addTravelRequest.journeyTo.dropdown.loc = {"locator":"xpath=//div[text()='Journey To']/following-sibling::input[contains(@ng-model,'journeyTo')]","desc":"Journey from text box"}
+addTravelRequest.clientOrProject.txt.loc = {"locator":"xpath=//div[text()=' Client / Project Name']//following-sibling::input","desc":"Client or Project name"}
 
-addTravelRequest.cabBookingRequired.label.loc = {\"locator\":\"xpath=//div[text()='Cab Booking Required']\",\"desc\":\"Cab booking required label\"}
-addTravelRequest.hotelBookingRequired.label.loc = {\"locator\":\"xpath=//div[text()='Hotel Booking Required']\",\"desc\":\"Hotel booking required label\"}
-addTravelRequest.needCash.lebel.loc = {\"locator\":\"xpath=//div[contains(text(),'Need Cash In Advance?')]\",\"desc\":\"Need cash in advance label\"}
+addTravelRequest.cabBookingRequired.label.loc = {"locator":"xpath=//div[text()='Cab Booking Required']","desc":"Cab booking required label"}
+addTravelRequest.hotelBookingRequired.label.loc = {"locator":"xpath=//div[text()='Hotel Booking Required']","desc":"Hotel booking required label"}
+addTravelRequest.needCash.lebel.loc = {"locator":"xpath=//div[contains(text(),'Need Cash In Advance?')]","desc":"Need cash in advance label"}
 
-addTravelRequest.cabBookingRequiredOptions.radiobtn.loc = {\"locator\":\"xpath=//div[text()='Cab Booking Required']//following-sibling::label//span[text()='%s']\",\"desc\":\"Cab booking required radiobutton\"}
-addTravelRequest.hotelBookingRequiredOptions.radiobtn.loc = {\"locator\":\"xpath=//div[text()='Hotel Booking Required']//following-sibling::label//span[text()='%s']\",\"desc\":\"Hotel booking required radiobutton\"}
-addTravelRequest.needCashOptions.radiobtn.loc = {\"locator\":\"xpath=//div[contains(text(),'Need Cash In Advance?')]//following-sibling::label//span[text()='%s']\",\"desc\":\"Need cash in advance name\"}
+addTravelRequest.cabBookingRequiredOptions.radiobtn.loc = {"locator":"xpath=//div[text()='Cab Booking Required']//following-sibling::label//span[text()='%s']","desc":"Cab booking required radiobutton"}
+addTravelRequest.hotelBookingRequiredOptions.radiobtn.loc = {"locator":"xpath=//div[text()='Hotel Booking Required']//following-sibling::label//span[text()='%s']","desc":"Hotel booking required radiobutton"}
+addTravelRequest.needCashOptions.radiobtn.loc = {"locator":"xpath=//div[contains(text(),'Need Cash In Advance?')]//following-sibling::label//span[text()='%s']","desc":"Need cash in advance name"}
 
-addTravelRequest.moreInfo.txt.loc = {\"locator\":\"xpath=//div[contains(text(),'Extra Information')]//following-sibling::textarea\",\"desc\":\"More information text area\"}
-addTravelRequest.idProof.btn.loc = {\"locator\":\"xpath=//div[contains(text(),'ID Proof')]//following-sibling::div\",\"desc\":\"Id proof attachments\"}
+addTravelRequest.moreInfo.txt.loc = {"locator":"xpath=//div[contains(text(),'Extra Information')]//following-sibling::textarea","desc":"More information text area"}
+addTravelRequest.idProof.btn.loc = {"locator":"xpath=//div[contains(text(),'ID Proof')]//following-sibling::div","desc":"Id proof attachments"}
 
-addTravelRequest.mandatoryFields.label.loc = {\"locator\":\"xpath=//div[text()='%s']//span[text()='*']\",\"desc\":\"Mandatory fields on Add Travel page\"}
+addTravelRequest.mandatoryFields.label.loc = {"locator":"xpath=//div[contains(text(),'%s')]//span[text()='*']","desc":"Mandatory fields on Add Travel page"}
 
-addTravelRequest.journeyFromDate.txt.loc = {\"locator\":\"xpath=//div[text()='Journey Start Date']/following-sibling::div/input[contains(@ng-model,'journeyFromDate')]\",\"desc\":\"Journey from date text box\"}
-addTravelRequest.journeyToDate.txt.loc = {\"locator\":\"xpath=//div[text()='Journey End Date']/following-sibling::div/input[contains(@ng-model,'journeyToDate')]\",\"desc\":\"Journey To date text box\"}
+addTravelRequest.journeyFromDate.txt.loc = {"locator":"xpath=//div[text()='Journey Start Date']/following-sibling::div/input[contains(@ng-model,'journeyFromDate')]","desc":"Journey from date text box"}
+addTravelRequest.journeyToDate.txt.loc = {"locator":"xpath=//div[text()='Journey End Date']/following-sibling::div/input[contains(@ng-model,'journeyToDate')]","desc":"Journey To date text box"}
 
-addTravelRequest.date.calendar.loc = {\"locator\":\"xpath=//button[@ng-click='select(dt.date)']//span[@class='ng-binding']\",\"desc\":\"date from calendar on Add Travel page\"}
-addTravelRequest.datePrevious.lnk.loc = {\"locator\":\"xpath=//button[contains(@class,'left')]//i\",\"desc\":\"Previous button for selecting date of previous month from calendar on Add Travel page\"}
-addTravelRequest.dateNext.lnk.loc = {\"locator\":\"xpath=//button[contains(@class,'right')]//i\",\"desc\":\"Next button for selecting date of next month from calendar on Add Travel page\"}
-addTravelRequest.dateMidLink.lnk.loc = {\"locator\":\"xpath=//button[contains(@class,'title')]//strong\",\"desc\":\"Mid link for selecting month and year from calendar on Add Travel page\"}
-addTravelRequest.months.lnk.loc = {\"locator\":\"xpath=//button[@class='btn btn-default']//span\",\"desc\":\"Month link for selecting month from calendar on Add Travel page\"}
-addTravelRequest.time.btn.loc = {\"locator\":\"xpath=//button[text()='Time']\",\"desc\":\"Time button from calendar on Add Travel page\"}
-addTravelRequest.hrs.txt.loc = {\"locator\":\"xpath=//input[@ng-model='hours']\",\"desc\":\"Hours for time field from calendar on Add Travel page\"}
-addTravelRequest.min.txt.loc = {\"locator\":\"xpath=//input[@ng-model='minutes']\",\"desc\":\"Minutes for time field from calendar on Add Travel page\"}
+addTravelRequest.date.calendar.loc = {"locator":"xpath=//button[@ng-click='select(dt.date)']//span[@class='ng-binding']","desc":"date from calendar on Add Travel page"}
+addTravelRequest.datePrevious.lnk.loc = {"locator":"xpath=//button[contains(@class,'left')]//i","desc":"Previous button for selecting date of previous month from calendar on Add Travel page"}
+addTravelRequest.dateNext.lnk.loc = {"locator":"xpath=//button[contains(@class,'right')]//i","desc":"Next button for selecting date of next month from calendar on Add Travel page"}
+addTravelRequest.dateMidLink.lnk.loc = {"locator":"xpath=//button[contains(@class,'title')]//strong","desc":"Mid link for selecting month and year from calendar on Add Travel page"}
+addTravelRequest.months.lnk.loc = {"locator":"xpath=//button[@class='btn btn-default']//span","desc":"Month link for selecting month from calendar on Add Travel page"}
+addTravelRequest.time.btn.loc = {"locator":"xpath=//button[text()='Time']","desc":"Time button from calendar on Add Travel page"}
+addTravelRequest.hrs.txt.loc = {"locator":"xpath=//input[@ng-model='hours']","desc":"Hours for time field from calendar on Add Travel page"}
+addTravelRequest.min.txt.loc = {"locator":"xpath=//input[@ng-model='minutes']","desc":"Minutes for time field from calendar on Add Travel page"}
 
-addTravelRequest.hrsIncrement.lnk.loc = {\"locator\":\"xpath=//td[@class='uib-increment hours']\",\"desc\":\"Hours increment symbol in time field from calendar on Add Travel page\"}
-addTravelRequest.minIncrement.lnk.loc = {\"locator\":\"xpath=//td[@class='uib-increment minutes']\",\"desc\":\"Min increment symbol in time field from calendar on Add Travel page\"}
-addTravelRequest.hrsDecrement.lnk.loc = {\"locator\":\"xpath=//td[@class='uib-decrement hours']\",\"desc\":\"Hours decrement symbol in time field from calendar on Add Travel page\"}
-addTravelRequest.minDecrement.lnk.loc = {\"locator\":\"xpath=//td[@class='uib-decrement minutes']\",\"desc\":\"Min decrement symbol in time field from calendar on Add Travel page\"}
+addTravelRequest.hrsIncrement.lnk.loc = {"locator":"xpath=//td[@class='uib-increment hours']","desc":"Hours increment symbol in time field from calendar on Add Travel page"}
+addTravelRequest.minIncrement.lnk.loc = {"locator":"xpath=//td[@class='uib-increment minutes']","desc":"Min increment symbol in time field from calendar on Add Travel page"}
+addTravelRequest.hrsDecrement.lnk.loc = {"locator":"xpath=//td[@class='uib-decrement hours']","desc":"Hours decrement symbol in time field from calendar on Add Travel page"}
+addTravelRequest.minDecrement.lnk.loc = {"locator":"xpath=//td[@class='uib-decrement minutes']","desc":"Min decrement symbol in time field from calendar on Add Travel page"}
 
-addTravelRequest.submit.btn.loc = {\"locator\":\"xpath=//button[text()='Submit']\",\"desc\":\"Submit button on Add Travel page\"}
-addTravelRequest.confirmation.msg.loc = {\"locator\":\"xpath=//div[text()='Travel request added successfully']\",\"desc\":\"Travel request cofirmation message on Add Travel page\"}
+addTravelRequest.submit.btn.loc = {"locator":"xpath=//button[text()='Submit']","desc":"Submit button on Add Travel page"}
+addTravelRequest.confirmation.msg.loc = {"locator":"xpath=//div[text()='Travel request added successfully']","desc":"Travel request cofirmation message on Add Travel page"}
+
 
 
 

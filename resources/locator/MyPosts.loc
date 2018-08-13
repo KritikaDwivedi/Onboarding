@@ -1,15 +1,15 @@
-myPosts.heading.header.loc = {\"locator\":\"xpath=//div[@class='bread_crum_heading1 ']\",\"desc\":\"Heading of My Posts page\"}
-myPosts.navigation1.lnk.loc = {\"locator\":\"xpath=//div[@class='bread_crum_heading1 ']/following-sibling::span[1]\",\"desc\":\"Navigation text for My Posts page\"}
-myPosts.navigation2.lnk.loc = {\"locator\":\"xpath=//div[@class='bread_crum_heading1 ']/following-sibling::span[2]\",\"desc\":\"Navigation sub text for My Posts page\"}
-myPosts.datefrom.txt.loc = {\"locator\":\"xpath=//div[text()='From']//following-sibling::div//img[@class='calender_icon']//preceding-sibling::input[contains(@class,'date_picker')]\",\"desc\":\"Date From label on My Posts page\"}
-myPosts.dateto.txt.loc = {\"locator\":\"xpath=//div[text()='To']//following-sibling::div//img[@class='calender_icon']//preceding-sibling::input[contains(@class,'date_picker')]\",\"desc\":\"Date To label on My Posts page\"}
-myPosts.keyword.txt.loc = {\"locator\":\"xpath=//div[text()='Keyword']//following-sibling::input[@type='text']\",\"desc\":\"Keyword textbox and Label on My Posts page\"}
-myPosts.category.dropdown.loc = {\"locator\":\"xpath=//div[text()='Category']/following-sibling::div//button[contains(@class,'dropdown')]\",\"desc\":\"Category dropdown on My Posts page\"}
-myPosts.search.btn.loc = {\"locator\":\"xpath=//button[text()='Search']\",\"desc\":\"Search button on My Posts page\"}
-myPosts.reset.btn.loc = {\"locator\":\"xpath=//button[text()='Reset']\",\"desc\":\"Reset button on My Posts page\"}
-myPosts.searchResult.tbl.loc = {\"locator\":\"xpath=//table//span[text()='Title']//ancestor::th/following-sibling::th//span[text()='Category']/ancestor::th/following-sibling::th//span[text()='Posted On']/ancestor::th/following-sibling::th[text()='Action']\",\"desc\":\"Table with columns on My Posts page\"}
-myPosts.filter.btn.loc = {\"locator\":\"xpath=//div[text()='My Posts']/parent::div/following-sibling::div/button[@class='btn_filter1 pull-right filter_btn_position_in_bread_crumb']\",\"desc\":\"Hide filter on My Posts page\"}
-myPosts.pagination.btn.loc = {\"locator\":\"xpath=//button[text()='Create']/following-sibling::div//ul[contains(@class,'pagination')]\",\"desc\":\"Pagination button on My Posts page\"}
-myPosts.edit.btn.loc = {\"locator\":\"xpath=//th[text()='Action']//ancestor::thead/following-sibling::tbody//div[@title='Edit']\",\"desc\":\"Edit icon to edit Action on My Posts page\"}
-myPosts.delete.btn.loc = {\"locator\":\"xpath=//th[text()='Action']//ancestor::thead/following-sibling::tbody//div[@title='Delete']\",\"desc\":\"Edit icon to edit Action on My Posts page\"}
-myPosts.createPost.btn.loc = {\"locator\":\"xpath=//table/parent::div/following-sibling::div//button[text()='Create']\",\"desc\":\"Create button to create new Post on My Posts page\"}
+myPosts.heading.header.loc = {"locator":"xpath=//div[@class='bread_crum_heading1 ']","desc":"Heading of My Posts page"}
+myPosts.navigation1.lnk.loc = {"locator":"xpath=//div[@class='bread_crum_heading1 ']/following-sibling::span[1]","desc":"Navigation text for My Posts page"}
+myPosts.navigation2.lnk.loc = {"locator":"xpath=//div[@class='bread_crum_heading1 ']/following-sibling::span[2]","desc":"Navigation sub text for My Posts page"}
+myPosts.datefrom.txt.loc = {"locator":"xpath=//div[text()='From']//following-sibling::div//img[@class='calender_icon']//preceding-sibling::input[contains(@class,'date_picker')]","desc":"Date From label on My Posts page"}
+myPosts.dateto.txt.loc = {"locator":"xpath=//div[text()='To']//following-sibling::div//img[@class='calender_icon']//preceding-sibling::input[contains(@class,'date_picker')]","desc":"Date To label on My Posts page"}
+myPosts.keyword.txt.loc = {"locator":"xpath=//div[text()='Keyword']//following-sibling::input[@type='text']","desc":"Keyword textbox and Label on My Posts page"}
+myPosts.category.dropdown.loc = {"locator":"xpath=//div[text()='Category']/following-sibling::div//button[contains(@class,'dropdown')]","desc":"Category dropdown on My Posts page"}
+myPosts.search.btn.loc = {"locator":"xpath=//button[text()='Search']","desc":"Search button on My Posts page"}
+myPosts.reset.btn.loc = {"locator":"xpath=//button[text()='Reset']","desc":"Reset button on My Posts page"}
+myPosts.searchResult.tbl.loc = {"locator":"xpath=//table//span[text()='Title']//ancestor::th/following-sibling::th//span[text()='Category']/ancestor::th/following-sibling::th//span[text()='Posted On']/ancestor::th/following-sibling::th[text()='Action']","desc":"Table with columns on My Posts page"}
+myPosts.filter.btn.loc = {"locator":"xpath=//div[text()='My Posts']/parent::div/following-sibling::div/button[@class='btn_filter1 pull-right filter_btn_position_in_bread_crumb']","desc":"Hide filter on My Posts page"}
+myPosts.pagination.btn.loc = {"locator":"xpath=//button[text()='Create']/following-sibling::div//ul[contains(@class,'pagination')]","desc":"Pagination button on My Posts page"}
+myPosts.edit.btn.loc = {"locator":"xpath=//th[text()='Action']//ancestor::thead/following-sibling::tbody//div[@title='Edit']","desc":"Edit icon to edit Action on My Posts page"}
+myPosts.delete.btn.loc = {"locator":"xpath=//th[text()='Action']//ancestor::thead/following-sibling::tbody//div[@title='Delete']","desc":"Edit icon to edit Action on My Posts page"}
+myPosts.createPost.btn.loc = {"locator":"xpath=//table/parent::div/following-sibling::div//button[text()='Create']","desc":"Create button to create new Post on My Posts page"}

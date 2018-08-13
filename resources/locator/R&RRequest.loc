@@ -1,0 +1,16 @@
+rnrRequest.requestManager.lnk.loc={"locator":"xpath=//td[contains(text(),'%s')]//following-sibling::td[@data-title='Manager Status' and text()='%s']//preceding-sibling::td[text()='%s']","desc":"Request row"}
+rnrRequest.requestHR.lnk.loc={"locator":"xpath=//td[contains(text(),'%s')]//following-sibling::td[@data-title='HR Status' and text()='%s']//preceding-sibling::td[text()='%s']","desc":"Request row"}
+rnrRequest.approve.btn.loc = {"locator":"xpath=//button[contains(text(),'Approve')]","desc":"Approve button on R&R request page"}
+rnrRequest.reject.btn.loc = {"locator":"xpath=//button[contains(text(),'Reject')]","desc":"Reject button on R&R request page"}
+rnrRequest.comment.txt.loc = {"locator":"xpath=//div[text()=' Comment']//following-sibling::textarea","desc":"Comment to approve or reject on R&R request page"}
+rnrRequest.confirmation.msg.loc = {"locator":"xpath=//div[text()='Request approved successfully']","desc":"Confirmation on approval or rejection of R&R"}
+rnrRequest.firstRow.info.loc = {"locator":"xpath=//div[@class='row']/div/div[1]//div[@class='user_detail_cont pull-left patti four_section_pati no-border']//label[contains(text(),'%s')]//following-sibling::*","desc":"First row on opening a request of R&R"}
+rnrRequest.secondRow.info.loc = {"locator":"xpath=//div[@class='row']/div/div[3]//div[@class='user_detail_cont pull-left patti four_section_pati no-border']//label[contains(text(),'%s')]//following-sibling::*","desc":"Second row on opening a request of R&R"}
+rnrRequest.valueAdditionsBlock.info.loc = {"locator":"xpath=//div[text()='Value Additions']//following-sibling::div//span[text()='%s']","desc":"Value Additions data on opening a request of R&R"}
+rnrRequest.ReviewCommentsBlock.info.loc = {"locator":"xpath=//div[text()='Review Comments']","desc":"Review comments block on opening a request of R&R"}
+rnrRequest.cardBlock.info.loc = {"locator":"xpath=//div[text()='Reward Card']","desc":"Reward card on opening a request of R&R"}
+rnrRequest.fromDate.txt.loc = {"locator":"xpath=//div[text()='From']//following-sibling::div//input","desc":"From Date on R&R requests page"}
+rnrRequest.today.btn.loc = {"locator":"xpath=//button[text()='Today']","desc":"Today Date button on calendaer on R&R requests page"}
+rnrRequest.toDate.txt.loc = {"locator":"xpath=//div[text()='To']//following-sibling::div//input","desc":"To Date on R&R requests page"}
+rnrRequest.status.dropdown.loc = {"locator":"xpath=//button[contains(text(),'Select Status')]","desc":"Status dropdown on R&R requests page"}
+rnrRequest.statusOption.dropdown.loc = {"locator":"xpath=//button[contains(text(),'Select Status')]//following-sibling::ul//span[text()='%s']","desc":"Status dropdown options on R&R requests page"}

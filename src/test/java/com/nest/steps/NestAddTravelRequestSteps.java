@@ -1,6 +1,10 @@
 package com.nest.steps;
 
+import java.awt.AWTException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,8 +18,10 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
 public class NestAddTravelRequestSteps {
 
-	@QAFTestStep(description = "following fields should be available on travel request page {0} , {1} , {2} , {3} , {4} , {5} , {6} , {7} , {8} , {9} , {10} , {11} , {12}")
-	public static void addTravelFields(String purposeOfTravel, String type ,String travelType,String journeyFrom,String journeyTo,String journeyStartDate,String journeyEndDate,String clientName,String cabBooking,String hotelBooking,String needCash,String moreInfo,String idProof) {
+	@QAFTestStep(description = "following fields should be available {0}")
+	public static void fieldsPresent(String fields)	
+		{
+		
 		//String fields[]= {purposeOfTravel,  type , travelType, journeyFrom, journeyTo, journeyStartDate, journeyEndDate, clientName, cabBooking, hotelBooking, needCash, idProof, moreInfo};
 		String locator[]= {"addTravelRequest.purposeOfTravel.txt.loc", "addTravelRequest.type.dropdown.loc","addTravelRequest.travelType.label.loc","addTravelRequest.journeyFrom.dropdown.loc","addTravelRequest.journeyTo.dropdown.loc","addTravelRequest.journeyFromDate.txt.loc", "addTravelRequest.journeyToDate.txt.loc","addTravelRequest.clientOrProject.txt.loc","addTravelRequest.cabBookingRequired.label.loc","addTravelRequest.hotelBookingRequired.label.loc","addTravelRequest.needCash.lebel.loc","addTravelRequest.moreInfo.txt.loc","addTravelRequest.idProof.btn.loc"};
 		for(int i=0; i<13; i++)
@@ -24,45 +30,50 @@ public class NestAddTravelRequestSteps {
 		}
 	}
 
-	@QAFTestStep(description = "following fields should be mandatory fields {0} , {1} , {2} , {3} , {4} , {5} , {6} should be mandatory fields")
-	public static void addTravelMandatoryFields(String purposeOfTravel, String type ,String journeyFrom,String journeyTo,String journeyStartDate,String journeyEndDate,String clientName) {
-		String mandatoryfields[]= {purposeOfTravel,  type , journeyFrom, journeyTo, journeyStartDate, journeyEndDate, clientName};
-		for(int i=0; i<7; i++)
-		{
-			QAFExtendedWebElement fieldName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("addTravelRequest.mandatoryFields.label.loc"),mandatoryfields[i]));
-			fieldName.isDisplayed();
+	@QAFTestStep(description = "following fields should be mandatory {0} on {1} page")
+	public static void mandatoryFieldsPresent(String mandatoryFields, String page) {
+		List<String> mandatoryFieldsList = new ArrayList<String>(Arrays.asList(mandatoryFields.split(",")));
+		for(int i=0 ; i< mandatoryFieldsList.size() ; i++)
+		{	if(page.equals("Travel")) {
+				QAFExtendedWebElement fieldName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("addTravelRequest.mandatoryFields.label.loc"),mandatoryFieldsList.get(i)));
+				fieldName.isDisplayed();
+				}
+			if(page.equals("New Post")) {
+				QAFExtendedWebElement fieldName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),mandatoryFieldsList.get(i)));
+				fieldName.isDisplayed();
+				}
 		}
 	}
 
-	@QAFTestStep(description = "user enters required data for purpose of travel as {0} , type as {1} , journey from as {2} , journey to as {3} , journey start date as {4} , journey end date as {5} , client/project name as {6}")
-	public void addTravelEnterData(String purposeOfTravel, String type ,String journeyFrom,String journeyTo,String journeyStartDate,String journeyEndDate,String clientName) throws InterruptedException, ParseException {
-		CommonStep.sendKeys(purposeOfTravel,"addTravelRequest.purposeOfTravel.txt.loc");
-
+	@QAFTestStep(description = "I enter required data")
+	public void addTravelEnterData() throws InterruptedException, ParseException {
+		CommonStep.sendKeys((String)ConfigurationManager.getBundle().getProperty("travel.travel"),"addTravelRequest.purposeOfTravel.txt.loc");
+		
 		CommonStep.click("addTravelRequest.type.dropdown.loc");
-		QAFExtendedWebElement fieldName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("addTravelRequest.typeOptions.dropdown.loc"),type));
+		QAFExtendedWebElement fieldName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("addTravelRequest.typeOptions.dropdown.loc"),(String)ConfigurationManager.getBundle().getProperty("travel.type")));
 		fieldName.click();
 
-		CommonStep.sendKeys(journeyFrom,"addTravelRequest.journeyFrom.dropdown.loc");
+		CommonStep.sendKeys((String)ConfigurationManager.getBundle().getProperty("travel.journeyFrom"),"addTravelRequest.journeyFrom.dropdown.loc");
 		Actions act=new Actions(new WebDriverTestBase().getDriver());
 		act.sendKeys(Keys.ENTER).perform();
 
-		CommonStep.sendKeys(journeyFrom,"addTravelRequest.journeyTo.dropdown.loc");
+		CommonStep.sendKeys((String)ConfigurationManager.getBundle().getProperty("travel.journeyTo"),"addTravelRequest.journeyTo.dropdown.loc");
 		act.sendKeys(Keys.ENTER).perform();
 
 		CommonStep.click("addTravelRequest.journeyFromDate.txt.loc");
-		CommonUtils.datePicker(journeyStartDate);
+		CommonUtils.datePicker((String)ConfigurationManager.getBundle().getProperty("travel.journeyStartDate"));
 		act.sendKeys(Keys.ENTER).perform();
 
 		CommonStep.click("addTravelRequest.journeyToDate.txt.loc");
-		CommonUtils.datePicker(journeyEndDate);
+		CommonUtils.datePicker((String)ConfigurationManager.getBundle().getProperty("travel.journeyEndDate"));
 		act.sendKeys(Keys.ENTER).perform();
 
 		CommonStep.click("addTravelRequest.clientOrProject.txt.loc");
-		CommonStep.sendKeys(clientName,"addTravelRequest.clientOrProject.txt.loc");	
+		CommonStep.sendKeys((String)ConfigurationManager.getBundle().getProperty("travel.clientProjectName"),"addTravelRequest.clientOrProject.txt.loc");	
 	}
 
 
-	@QAFTestStep(description = "user clicks on submit button to submit travel request")
+	@QAFTestStep(description = "I click on submit button to submit travel request")
 	public static void submitTravelRequest() {
 		JavascriptExecutor js= (JavascriptExecutor)new WebDriverTestBase().getDriver();
 		QAFExtendedWebElement submit= new QAFExtendedWebElement("addTravelRequest.submit.btn.loc");
@@ -70,10 +81,19 @@ public class NestAddTravelRequestSteps {
 		submit.click();
 	}
 
-	@QAFTestStep(description = "travel request confirmation message should be displayed")
+	@QAFTestStep(description = "travel request confirmation message should be dispalyed")
 	public static void addTravelRequestConfirmation() {
 		CommonStep.verifyPresent("addTravelRequest.confirmation.msg.loc");
 		CommonStep.waitForVisible("addTravelRequest.confirmation.msg.loc",5000);
 		CommonStep.waitForNotVisible("addTravelRequest.confirmation.msg.loc",5000);
 	}
+	
+	@QAFTestStep(description = "I raise a travel request")
+	public void verifyTeamLeaveListButtons() throws InterruptedException, ParseException, AWTException{
+		// step implementation
+		NestVerifyUINewPostPageSteps.clickButton("New Travel Request");
+		addTravelEnterData();
+		submitTravelRequest();
+		addTravelRequestConfirmation();
+		}
 }

@@ -11,7 +11,7 @@ public class NestBlankLoginStep {
 	 *            : search term to be searched
 	 */
 		
-	@QAFTestStep(description = "user should get error message {0}")
+	@QAFTestStep(description = "I should get error message {0}")
 	public void verifyErrorForBlankLogin(String error) {
 		// step implementation
 		verifyAttribute("login.username.txt.loc", "msg-required", error);

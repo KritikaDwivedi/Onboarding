@@ -1,0 +1,37 @@
+
+SCENARIO: QEO-4836_Nest my post page UI
+META-DATA: {"description":"Verify UI of My Post page", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.HR.username}' and '${Login.HR.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'Publisher' and 'My Posts'
+	Then title of page should be 'My Posts'
+	And navigation for the page should be 'Home  / Publisher'
+	And two date picker should be present with label from and to
+	And one text field should be present with label keyword
+	And dropdown should be present for category
+	And two buttons should be present for search and reset
+	And table should be present to show search results with columns title, category, posted on, action
+	And date should be in 'dd-MMMM-yyyy' format
+	And hide filter icon should be on right upper side of page
+	And pagination should be present on right lower end of page
+	And action column should have edit and delete icons
+	And new post button should be present on just below the table
+END
+
+
+SCENARIO: QEO-4837_Nest new post page UI
+META-DATA: {"description":"Verify UI for New Post page", "groups":["SMOKE"]}
+	Given I launch the application
+	When I login with '${Login.HR.username}' and '${Login.HR.password}'
+	And I turn on 'Manager View'
+	And I navigate to 'Publisher' and 'My Posts'
+	Then title of page should be 'My Posts'
+	When I click on 'Create' button
+	Then breadcrumb should be 'Home  / Publisher  / My Posts'
+	And text fields should be present title, post url, image url, description
+	And two dropdowns should be present category and location
+	And two buttons should be present submit and back
+	And following fields should be mandatory '${posts.mandatory}' on 'New Post' page
+#	And 'Title' , 'Post URL' , 'Category' , 'Location' , 'Description' should be compulsory fields
+END

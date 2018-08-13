@@ -10,13 +10,13 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
 public class NestVerifyAllLinkSteps {
 
-	@QAFTestStep(description = "clicks on View All link in the Request section")
+	@QAFTestStep(description = "I click on View All link in the Request section")
 	public static void clickViewAll() {
 		CommonStep.click("viewAll.viewAll.lnk.loc");
 		CommonUtils.waitForPageToLoad(10000);
 	}
 	
-	@QAFTestStep(description = "User should be navigated to {0}")
+	@QAFTestStep(description = "I should be navigated to {0}")
 	public static void viewAllPage(String title) throws AWTException, InterruptedException {
 		CommonUtils.verifyTitleOfPage(title);
 	}

@@ -13,6 +13,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
+import com.qmetry.qaf.automation.core.ConfigurationManager;
+import com.qmetry.qaf.automation.core.QAFTestBase;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
@@ -29,59 +31,70 @@ public class NestVerifyExpenseFunctionalityWithInvalidDetailsSteps {
 	public static HashMap<String,String> map=new HashMap<>();
 	public static List<QAFWebElement> categoryOptionsList;
 	
-	@QAFTestStep(description = "clicks on new expense button")
+	@QAFTestStep(description = "I click on new expense button")
 	public void expenseButtonClick() throws InterruptedException {
 		// step implementation
-		Thread.sleep(5000);
+		CommonStep.waitForVisible("newExpense.newExpense.btn.loc");
 		click("newExpense.newExpense.btn.loc");
+		QAFTestBase.pause(3000);
 	}	
-	@QAFTestStep(description = "fills the details for title as {0} , expense date as {1} , project as {2} if other then {3} , expense category as {4} , expense amount as {5}")
-	public void expenseEnterDetails(String title, String expenseDate, String project, String other, String category, String amount) throws InterruptedException {
+	@QAFTestStep(description = "I fill the {0} details")
+	public void expenseEnterDetails(String details) {
 		// step implementation
-		Thread.sleep(2000);
-		map.put("titleActual",title);
-		map.put("dateActual",expenseDate);
-		map.put("projectActual",project);
-		map.put("otherProjectActual",other);
-		map.put("categoryActual",category);
-		map.put("amountActual",amount);
-		
+		if(details.equals("invalid")) 
+		{
+			map.put("titleActual",(String)ConfigurationManager.getBundle().getProperty("expense.invalidTitle"));
+			map.put("dateActual",(String)ConfigurationManager.getBundle().getProperty("expense.expense.invalidExpenseDate"));
+			map.put("projectActual",(String)ConfigurationManager.getBundle().getProperty("expense.invalidProject"));
+			map.put("otherProjectActual",(String)ConfigurationManager.getBundle().getProperty("expense.invalidProjectOther"));
+			map.put("categoryActual",(String)ConfigurationManager.getBundle().getProperty("expense.invalidCategory"));
+			map.put("amountActual",(String)ConfigurationManager.getBundle().getProperty("expense.invalidAmount"));
+		}
+		else
+		{
+			map.put("titleActual",(String)ConfigurationManager.getBundle().getProperty("expense.validTitle"));
+			map.put("dateActual",(String)ConfigurationManager.getBundle().getProperty("expense.expense.validExpenseDate"));
+			map.put("projectActual",(String)ConfigurationManager.getBundle().getProperty("expense.validProject"));
+			map.put("otherProjectActual",(String)ConfigurationManager.getBundle().getProperty("expense.validProjectOther"));
+			map.put("categoryActual",(String)ConfigurationManager.getBundle().getProperty("expense.validCategory"));
+			map.put("amountActual",(String)ConfigurationManager.getBundle().getProperty("expense.validAmount"));
+		}
 		click("newExpense.title.txt.loc");
-		sendKeys(title, "newExpense.title.txt.loc");
+		sendKeys(map.get("titleActual"), "newExpense.title.txt.loc");
 		
 		click("newExpense.expenseDate.txt.loc");
 		clear("newExpense.expenseDate.txt.loc");
-		sendKeys(expenseDate, "newExpense.expenseDate.txt.loc");
+		sendKeys(map.get("dateActual"), "newExpense.expenseDate.txt.loc");
 		
 		click("newExpense.project.txt.loc");
-		sendKeys(project, "newExpense.project.txt.loc");
+		sendKeys(map.get("projectActual"), "newExpense.project.txt.loc");
 		
-		if (project.equals("Other"))
+		if (map.get("projectActual").equals("Other"))
 		{	Actions act=new Actions(new WebDriverTestBase().getDriver());
 			act.sendKeys(Keys.ENTER).perform();
 			click("newExpense.projectOther.txt.loc");
-			sendKeys(other, "newExpense.projectOther.txt.loc");
+			sendKeys(map.get("otherProjectActual"), "newExpense.projectOther.txt.loc");
 		}
 		
 		click("newExpense.category.txt.loc");
 		QAFExtendedWebElement categoryOptions= new QAFExtendedWebElement("newExpense.categoryOptions.dropdown.loc");
 		categoryOptionsList=categoryOptions.findElements("myNominations.approved.data.loc");
-		sendKeys(category, "newExpense.category.txt.loc");
+		sendKeys(map.get("categoryActual"), "newExpense.category.txt.loc");
 		Actions act=new Actions(new WebDriverTestBase().getDriver());
 		act.sendKeys(Keys.ENTER).perform();
 		
 		click("newExpense.amount.txt.loc");
-		sendKeys(amount, "newExpense.amount.txt.loc");
+		sendKeys(map.get("amountActual"), "newExpense.amount.txt.loc");
 	
 	}
 	
-	@QAFTestStep(description = "clicks on expense submit button")
+	@QAFTestStep(description = "I click on expense submit button")
 	public void expenseSubmitButtonClick() throws InterruptedException {
 		// step implementation
 		QAFExtendedWebElement btn=new QAFExtendedWebElement("newExpense.submit.btn.loc");
 		JavascriptExecutor js= (JavascriptExecutor)new WebDriverTestBase().getDriver();
 		js.executeScript("arguments[0].scrollIntoView(true);", btn);
-		Thread.sleep(10000);
+		QAFTestBase.pause(1000);
 		click("newExpense.submit.btn.loc");
 	}	
 	
@@ -90,7 +103,7 @@ public class NestVerifyExpenseFunctionalityWithInvalidDetailsSteps {
 	public void verifyExpenseSuccessfulSubmission() throws InterruptedException {
 		// step implementation
 		CommonStep.verifyPresent("newExpense.successfulSubmission.msg.loc");
-		Thread.sleep(5000);
+		QAFTestBase.pause(5000);
 	}	
 	
 	@QAFTestStep(description = "there should be an error message on the form with focus")

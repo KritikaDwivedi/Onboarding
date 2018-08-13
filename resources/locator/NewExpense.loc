@@ -1,18 +1,20 @@
-newExpense.newExpense.btn.loc = {\"locator\":\"xpath=//div[@class='dont_show_in_mobile ng-scope']//button[contains(text(),'New Expense')] \",\"desc\":\"New Expense button My Expense list page\"}
-newExpense.title.txt.loc = {\"locator\":\"xpath=//div[@class='row']//div[contains(text(),'Title')]/following-sibling::input\",\"desc\":\"Ttle text box on New Expense page\"}
-newExpense.titleError.msg.loc = {\"locator\":\"xpath=//div[@class='row']//div[contains(text(),'Title')]/following-sibling::input//following-sibling::div//div[text()='This is a required field.']\",\"desc\":\"Error message on New Expense page\"}
-newExpense.expenseDate.txt.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'Date')]\",\"desc\":\"Expense Date textbox on New Expense page\"}
-newExpense.project.txt.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'project')]\",\"desc\":\"Project textbox on New Expense page\"}
-newExpense.projectOther.txt.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'project')]//following-sibling::input\",\"desc\":\"Other Project textbox on New Expense page\"}
-newExpense.category.txt.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'category')]\",\"desc\":\"Category textbox on New Expense page\"}
-newExpense.amount.txt.loc = {\"locator\":\"xpath=//td//div/input[contains(@ng-model,'amount')]\",\"desc\":\"Amount textbox on New Expense page\"}
-newExpense.submit.btn.loc = {\"locator\":\"xpath=//div/button[text()='Submit']\",\"desc\":\"Submit button on New Expense page\"}
-newExpense.errorDate.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'Date')]/parent::div[@uib-tooltip='Date invalid. Valid format is dd-mmm-yyyy. i.e. 31-Jan-2017']\",\"desc\":\"Error message for invalid date on New Expense page\"}
-newExpense.errorAmount.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'amount')]/parent::div[@uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Amount text box on New Expense page\"}
-newExpense.errorProject.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'project') and @uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Project text box on New Expense page\"}
-newExpense.errorCategory.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'category') and @uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Category text box on New Expense page\"}
-newExpense.errorProjectOther.msg.loc = {\"locator\":\"xpath=//td//input[contains(@ng-model,'project')]//following-sibling::input[@uib-tooltip='This is a required field.']\",\"desc\":\"Error message for Other Project on New Expense page\"}
-newExpense.attach.btn.loc = {\"locator\":\"xpath=//div[contains(text(),'Attachments')]/following-sibling::div\",\"desc\":\"Attach button on New Expense page\"}
-newExpense.attachment.lnk.loc = {\"locator\":\"xpath=//a[text()='%s']\",\"desc\":\"Attachments on New Expense page\"}
-newExpense.successfulSubmission.msg.loc = {\"locator\":\"xpath=//div[text()='Expense submitted successfully.']\",\"desc\":\"Expense request successful submission message on New Expense page\"}
-newExpense.categoryOptions.dropdown.loc = {\"locator\":\"xpath=//td[3]//li\",\"desc\":\"Category options on New Expense page\"}
+newExpense.newExpense.btn.loc = {"locator":"xpath=//div[@class='dont_show_in_mobile ng-scope']//button[contains(text(),'New Expense')] ","desc":"New Expense button My Expense list page"}
+newExpense.title.txt.loc = {"locator":"xpath=//div[@class='row']//div[contains(text(),'Title')]/following-sibling::input","desc":"Ttle text box on New Expense page"}
+newExpense.titleError.msg.loc = {"locator":"xpath=//div[@class='row']//div[contains(text(),'Title')]/following-sibling::input//following-sibling::div//div[text()='This is a required field.']","desc":"Error message on New Expense page"}
+newExpense.expenseDate.txt.loc = {"locator":"xpath=//td//input[contains(@ng-model,'Date')]","desc":"Expense Date textbox on New Expense page"}
+newExpense.project.txt.loc = {"locator":"xpath=//td//input[contains(@ng-model,'project')]","desc":"Project textbox on New Expense page"}
+newExpense.projectOther.txt.loc = {"locator":"xpath=//td//input[contains(@ng-model,'project')]//following-sibling::input","desc":"Other Project textbox on New Expense page"}
+newExpense.category.txt.loc = {"locator":"xpath=//td//input[contains(@ng-model,'category')]","desc":"Category textbox on New Expense page"}
+newExpense.amount.txt.loc = {"locator":"xpath=//td//div/input[contains(@ng-model,'amount')]","desc":"Amount textbox on New Expense page"}
+newExpense.submit.btn.loc = {"locator":"xpath=//div/button[text()='Submit']","desc":"Submit button on New Expense page"}
+newExpense.errorDate.msg.loc = {"locator":"xpath=//td//input[contains(@ng-model,'Date')]/parent::div[@uib-tooltip='Date invalid. Valid format is dd-mmm-yyyy. i.e. 31-Jan-2017']","desc":"Error message for invalid date on New Expense page"}
+newExpense.errorAmount.msg.loc = {"locator":"xpath=//td//input[contains(@ng-model,'amount')]/parent::div[@uib-tooltip='This is a required field.']","desc":"Error message for Amount text box on New Expense page"}
+newExpense.errorProject.msg.loc = {"locator":"xpath=//td//input[contains(@ng-model,'project') and @uib-tooltip='This is a required field.']","desc":"Error message for Project text box on New Expense page"}
+newExpense.errorCategory.msg.loc = {"locator":"xpath=//td//input[contains(@ng-model,'category') and @uib-tooltip='This is a required field.']","desc":"Error message for Category text box on New Expense page"}
+newExpense.errorProjectOther.msg.loc = {"locator":"xpath=//td//input[contains(@ng-model,'project')]//following-sibling::input[@uib-tooltip='This is a required field.']","desc":"Error message for Other Project on New Expense page"}
+newExpense.attach.btn.loc = {"locator":"xpath=//div[contains(text(),'Attachments')]/following-sibling::div","desc":"Attach button on New Expense page"}
+newExpense.attachment.lnk.loc = {"locator":"xpath=//a[text()='%s']","desc":"Attachments on New Expense page"}
+newExpense.successfulSubmission.msg.loc = {"locator":"xpath=//div[text()='Expense submitted successfully.']","desc":"Expense request successful submission message on New Expense page"}
+newExpense.categoryOptions.dropdown.loc = {"locator":"xpath=//td[3]//li","desc":"Category options on New Expense page"}
+newExpense.uploadWindow.window.loc = {"locator":"xpath=//input[@type='file']","desc":"Attachment window on New Expense page"}
+

@@ -1,15 +1,15 @@
-applyLeave.specialType.lnk.loc = {\"locator\":\"xpath=//div[text()=' Apply Special leave ']//img\",\"desc\":\"Special Type leave selection on Apply Leave page\"}
-applyLeave.specialSubType.radiobtn.loc = {\"locator\":\"xpath=//span[contains(text(),'%s')]\",\"desc\":\"Maternity, Paternity or Wedding Leave radiobutton\"}
-applyLeave.specialBalance.lnk.loc = {\"locator\":\"xpath=//span[contains(text(),'%s')]//div[contains(@class,'special_leave_days')]\",\"desc\":\"Special leave balance\"}
-applyLeave.specialFromDate.txt.loc = {\"locator\":\"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//input[@id='startDate_apply']\",\"desc\":\"Special leave from date\"}
-applyLeave.specialToDate.txt.loc = {\"locator\":\"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//input[@id='endDate_apply']\",\"desc\":\"Special leave from date\"}
-applyLeave.specialApply.btn.loc = {\"locator\":\"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//button[text()='Apply']\",\"desc\":\"Special leave apply button\"}
-applyLeave.ptoFromDate.txt.loc = {\"locator\":\"xpath=//div[text()=' Apply Special leave ']//ancestor::div[@class='row']/following-sibling::div//input[@id='startDate_apply']\",\"desc\":\"PTO leave from date\"}
-applyLeave.ptoToDate.txt.loc = {\"locator\":\"xpath=//div[text()=' Apply Special leave ']//ancestor::div[@class='row']/following-sibling::div//input[@id='endDate_apply']\",\"desc\":\"PTO leave from date\"}
-applyLeave.reason.dropdown.loc = {\"locator\":\"xpath=//div[text()='Reason for Leave']/following-sibling::div/button\",\"desc\":\"Reason dopdown on Apply Leave page\"}
-applyLeave.reasonOptions.dropdown.loc = {\"locator\":\"xpath=//div[text()='Reason for Leave']/following-sibling::div/button/following-sibling::ul//a[text()='%s']\",\"desc\":\"Reason dopdown on Apply Leave page\"}
-applyLeave.OtherOptions.txt.loc = {\"locator\":\"xpath=//div[text()='Reason for Leave']/following-sibling::div[text()='Other']/following-sibling::input\",\"desc\":\"Other Reason textbox on Apply Leave page\"}
-applyLeave.halfDayOrFullDay.radiobtn.loc = {\"locator\":\"xpath=//span[text()='%s']\",\"desc\":\"First half, second half or full day leave section radiobuttons on Apply Leave page\"}
-applyLeave.apply.btn.loc = {\"locator\":\"xpath=//button[text()='Apply']\",\"desc\":\"Apply button\"}
-applyLeave.totalLeave.txt.loc = {\"locator\":\"xpath=//span[contains(text(),'Total Leave(s)')]/parent::li\",\"desc\":\"Total leave count on Apply Leave page\"}
-applyLeave.applyConfirmation.info.loc = {\"locator\":\"xpath=//div[text()='Leave has been applied successfully']\",\"desc\":\"Leave applied confirmation\"}
+applyLeave.specialType.lnk.loc = {"locator":"xpath=//div[text()=' Apply Special leave ']//img","desc":"Special Type leave selection on Apply Leave page"}
+applyLeave.specialSubType.radiobtn.loc = {"locator":"xpath=//span[contains(text(),'%s')]","desc":"Maternity, Paternity or Wedding Leave radiobutton"}
+applyLeave.specialBalance.lnk.loc = {"locator":"xpath=//span[contains(text(),'%s')]//div[contains(@class,'special_leave_days')]","desc":"Special leave balance"}
+applyLeave.specialFromDate.txt.loc = {"locator":"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//input[@id='startDate_apply']","desc":"Special leave from date"}
+applyLeave.specialToDate.txt.loc = {"locator":"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//input[@id='endDate_apply']","desc":"Special leave from date"}
+applyLeave.specialApply.btn.loc = {"locator":"xpath=//div[text()='Apply Special Leave']//ancestor::div[@class='modal-header']/following-sibling::div//button[text()='Apply']","desc":"Special leave apply button"}
+applyLeave.ptoFromDate.txt.loc = {"locator":"xpath=//div[text()=' Apply Special leave ']//ancestor::div[@class='row']/following-sibling::div//input[@id='startDate_apply']","desc":"PTO leave from date"}
+applyLeave.ptoToDate.txt.loc = {"locator":"xpath=//div[text()=' Apply Special leave ']//ancestor::div[@class='row']/following-sibling::div//input[@id='endDate_apply']","desc":"PTO leave from date"}
+applyLeave.reason.dropdown.loc = {"locator":"xpath=//div[text()='Reason for Leave']/following-sibling::div/button","desc":"Reason dopdown on Apply Leave page"}
+applyLeave.reasonOptions.dropdown.loc = {"locator":"xpath=//div[text()='Reason for Leave']/following-sibling::div/button/following-sibling::ul//a[text()='%s']","desc":"Reason dopdown on Apply Leave page"}
+applyLeave.OtherOptions.txt.loc = {"locator":"xpath=//div[text()='Reason for Leave']/following-sibling::div[text()='Other']/following-sibling::input","desc":"Other Reason textbox on Apply Leave page"}
+applyLeave.halfDayOrFullDay.radiobtn.loc = {"locator":"xpath=//span[text()='%s']","desc":"First half, second half or full day leave section radiobuttons on Apply Leave page"}
+applyLeave.apply.btn.loc = {"locator":"xpath=//button[text()='Apply']","desc":"Apply button"}
+applyLeave.totalLeave.txt.loc = {"locator":"xpath=//span[contains(text(),'Total Leave(s)')]/parent::li","desc":"Total leave count on Apply Leave page"}
+applyLeave.applyConfirmation.info.loc = {"locator":"xpath=//div[text()='Leave has been applied successfully']","desc":"Leave applied confirmation"}

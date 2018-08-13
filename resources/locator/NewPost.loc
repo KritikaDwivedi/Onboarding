@@ -1,13 +1,13 @@
-newPost.heading.header.loc = {\"locator\":\"xpath=//div[text()='Create Post']\",\"desc\":\"Heading of Create Post page\"}
-newPost.navigation1.lnk.loc = {\"locator\":\"xpath=//div[text()='Create Post']/following-sibling::span[1]\",\"desc\":\"Navigation text for Create Post page\"}
-newPost.navigation2.lnk.loc = {\"locator\":\"xpath=//div[text()='Create Post']/following-sibling::span[2]\",\"desc\":\"Navigation sub text for Create Post page\"}
-newPost.navigation3.lnk.loc = {\"locator\":\"xpath=//div[text()='Create Post']/following-sibling::span[3]\",\"desc\":\"Navigation sub text 2 for Create Post page\"}
-newPost.title.txt.loc = {\"locator\":\"xpath=//div[text()='Title']/following-sibling::div/input[@type='text']\",\"desc\":\"Title text field on Create Post page\"}
-newPost.postURL.txt.loc = {\"locator\":\"xpath=//div[text()='Post URL']/following-sibling::div/input[@type='url']\",\"desc\":\"Post URL text field on Create Post page\"}
-newPost.imageURL.txt.loc = {\"locator\":\"xpath=//div[text()='Image URL']/following-sibling::div/input[@type='url']\",\"desc\":\"Post URL text field on Create Post page\"}
-newPost.description.txt.loc = {\"locator\":\"xpath=//div[text()='Description']//following-sibling::textarea[@placeholder='Enter Description']\",\"desc\":\"Description text area on Create Post page\"}
-newPost.location.dropdown.loc = {\"locator\":\"xpath=//div[text()='Location']//following-sibling::div//button[contains(@class,'dropdown')]\",\"desc\":\"Category dropdown on Create Post page\"}
-newPost.category.dropdown.loc = {\"locator\":\"xpath=//div[text()='Category']//following-sibling::div//button[contains(@class,'dropdown')]\",\"desc\":\"Location dropdown on Create Post page\"}
-newPost.submit.btn.loc = {\"locator\":\"xpath=//button[text()=' Submit ']\",\"desc\":\"Submit button on Create Post page\"}
-newPost.back.btn.loc = {\"locator\":\"xpath=//button[text()=' Back ']\",\"desc\":\"Back button on Create Post page\"}
-newPost.mandatory.label.loc = {\"locator\":\"xpath=//div[text()='%s']//span[text()='*']\",\"desc\":\"Mandatory labels on Create Post page\"}
+newPost.heading.header.loc = {"locator":"xpath=//div[text()='Create Post']","desc":"Heading of Create Post page"}
+newPost.navigation1.lnk.loc = {"locator":"xpath=//div[text()='Create Post']/following-sibling::span[1]","desc":"Navigation text for Create Post page"}
+newPost.navigation2.lnk.loc = {"locator":"xpath=//div[text()='Create Post']/following-sibling::span[2]","desc":"Navigation sub text for Create Post page"}
+newPost.navigation3.lnk.loc = {"locator":"xpath=//div[text()='Create Post']/following-sibling::span[3]","desc":"Navigation sub text 2 for Create Post page"}
+newPost.title.txt.loc = {"locator":"xpath=//div[text()='Title']/following-sibling::div/input[@type='text']","desc":"Title text field on Create Post page"}
+newPost.postURL.txt.loc = {"locator":"xpath=//div[text()='Post URL']/following-sibling::div/input[@type='url']","desc":"Post URL text field on Create Post page"}
+newPost.imageURL.txt.loc = {"locator":"xpath=//div[text()='Image URL']/following-sibling::div/input[@type='url']","desc":"Post URL text field on Create Post page"}
+newPost.description.txt.loc = {"locator":"xpath=//div[text()='Description']//following-sibling::textarea[@placeholder='Enter Description']","desc":"Description text area on Create Post page"}
+newPost.location.dropdown.loc = {"locator":"xpath=//div[text()='Location']//following-sibling::div//button[contains(@class,'dropdown')]","desc":"Category dropdown on Create Post page"}
+newPost.category.dropdown.loc = {"locator":"xpath=//div[text()='Category']//following-sibling::div//button[contains(@class,'dropdown')]","desc":"Location dropdown on Create Post page"}
+newPost.submit.btn.loc = {"locator":"xpath=//button[text()=' Submit ']","desc":"Submit button on Create Post page"}
+newPost.back.btn.loc = {"locator":"xpath=//button[text()=' Back ']","desc":"Back button on Create Post page"}
+newPost.mandatory.label.loc = {"locator":"xpath=//div[text()='%s']//span[text()='*']","desc":"Mandatory labels on Create Post page"}

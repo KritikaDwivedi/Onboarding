@@ -1,9 +1,9 @@
-myNominations.breadcrumb.lnk.loc = {\"locator\":\"xpath=//span[contains(text(),'Home')]//following-sibling::span[contains(text(),'R & R ') and contains(text(),'My R & R')]\",\"desc\":\"Breadcrumb for My Nominations page\"}
-myNominations.column.txt.loc = {\"locator\":\"xpath=//span[text()='%s']\",\"desc\":\"Columns on My Nominations page\"}
-myNominations.rewardCount.data.loc = {\"locator\":\"xpath=//span[contains(text(),'%s')]//parent::td//following-sibling::td[1]\",\"desc\":\"Reward count for particular nominee on My Nominations page\"}
-myNominations.expandNominee.btn.loc = {\"locator\":\"xpath=//span[contains(text(),'%s')]//preceding-sibling::button\",\"desc\":\"+ symbol for particular nominee on My Nominations page\"}
-myNominations.pending.data.loc = {\"locator\":\"xpath=//table//td[text()='Pending']\",\"desc\":\"pending status for particular nominee on My Nominations page\"}
-myNominations.approved.data.loc = {\"locator\":\"xpath=//table//td[text()='Approved']\",\"desc\":\"approved status for particular nominee on My Nominations page\"}
-myNominations.rejected.data.loc = {\"locator\":\"xpath=//table//td[text()='Rejected']\",\"desc\":\"rejected status for particular nominee on My Nominations page\"}
-myNominations.pagination.data.loc = {\"locator\":\"xpath=//ul[contains(@class,'pagination') and @last-text='»' and @first-text='«' and @next-text='›' and @previous-text='‹']\",\"desc\":\"Pagination on My Nominations page\"}
+myNominations.breadcrumb.lnk.loc = {"locator":"xpath=//span[contains(text(),'Home')]//following-sibling::span[contains(text(),'R & R ') and contains(text(),'My R & R')]","desc":"Breadcrumb for My Nominations page"}
+myNominations.column.txt.loc = {"locator":"xpath=//span[text()='%s']","desc":"Columns on My Nominations page"}
+myNominations.rewardCount.data.loc = {"locator":"xpath=//span[contains(text(),'%s')]//parent::td//following-sibling::td[1]","desc":"Reward count for particular nominee on My Nominations page"}
+myNominations.expandNominee.btn.loc = {"locator":"xpath=//span[contains(text(),'%s')]//preceding-sibling::button","desc":"+ symbol for particular nominee on My Nominations page"}
+myNominations.pending.data.loc = {"locator":"xpath=//table//td[text()='Pending']","desc":"pending status for particular nominee on My Nominations page"}
+myNominations.approved.data.loc = {"locator":"xpath=//table//td[text()='Approved']","desc":"approved status for particular nominee on My Nominations page"}
+myNominations.rejected.data.loc = {"locator":"xpath=//table//td[text()='Rejected']","desc":"rejected status for particular nominee on My Nominations page"}
+myNominations.pagination.data.loc = {"locator":"xpath=//ul[contains(@class,'pagination') and @last-text='»' and @first-text='«' and @next-text='›' and @previous-text='‹']","desc":"Pagination on My Nominations page"}
 

@@ -24,7 +24,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 	 * @throws InterruptedException 
 	 */
 	
-	@QAFTestStep(description = "user selects type of leave as {0} and if special then subtype as {1}")
+	@QAFTestStep(description = "I select type of leave as {0} and if special then subtype as {1}")
 	public void selectLeaveType(String type, String subType) throws InterruptedException{
 		// step implementation
 		leaveType=type;
@@ -41,7 +41,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "select leave from date as {0} and to date as {1}")
+	@QAFTestStep(description = "I select leave from date as {0} and to date as {1}")
 	public void selectLeaveDates(String dateFrom, String dateTo) throws InterruptedException{
 		// step implementation
 		leaveDateFrom=dateFrom;
@@ -70,7 +70,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "selects the leave reason as {0} and if other then comment as {1}")
+	@QAFTestStep(description = "I select the leave reason as {0} and if other then comment as {1}")
 	public void selectLeaveReason(String reason, String comment) throws InterruptedException{
 		// step implementation
 		if (leaveType.equals("Special"))
@@ -94,7 +94,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "selects {0} leave")
+	@QAFTestStep(description = "I select {0} leave")
 	public void selectHalfOrFullDay(String day){
 		// step implementation
 		if (leaveType.equals("Special"))
@@ -108,7 +108,7 @@ public class NestVerifyApplyLeaveForSingleDaySteps {
 		}
 	}
 	
-	@QAFTestStep(description = "clicks on apply button")
+	@QAFTestStep(description = "I click on apply button")
 	public void applyClick() throws InterruptedException{
 		// step implementation
 		if (leaveType.equals("Special"))

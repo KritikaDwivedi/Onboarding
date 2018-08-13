@@ -22,11 +22,10 @@ of other open source software / files used by QMetry Automation Framework.
 For any inquiry or need additional information, please contact support-qaf@infostretch.com
 
 -->
- 
 
 <suite name="QAF Demo" verbose="0">
 	<test name="BDD Test" enabled="true">
-		<parameter name="scenario.file.loc" value="scenarios/NestVerifyExpenseFunctionalityWithInvalidDetailsScenario.bdd"></parameter>
+		<parameter name="scenario.file.loc" value="scenarios\LoginScenarios.bdd"></parameter>
 		<classes>
 			<class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory"></class>
 		</classes>

@@ -6,7 +6,7 @@ import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
 public class NestVerifyExpenseRequestApprovalSteps {
-	@QAFTestStep(description = "clicks on raised request by employee")
+	@QAFTestStep(description = "I click on raised request by employee")
 	public void clickRaisedRequest() throws InterruptedException{
 		// step implementation
 		String title=NestVerifyExpenseFunctionalityWithInvalidDetailsSteps.map.get("titleActual");
@@ -15,7 +15,7 @@ public class NestVerifyExpenseRequestApprovalSteps {
 		Thread.sleep(5000);
 	}
 	
-	@QAFTestStep(description = "manager enters comment as {0} and clicks on approve button")
+	@QAFTestStep(description = "I enter comment as {0} and click on approve button")
 	public void enterCommentAndClickApproveButton(String comment) throws InterruptedException{
 		// step implementation
 		CommonStep.sendKeys(comment, "teamReimbursement.comment.txt.loc");
@@ -23,7 +23,7 @@ public class NestVerifyExpenseRequestApprovalSteps {
 		CommonStep.click("teamReimbursement.approve.btn.loc");
 	}
 	
-	@QAFTestStep(description = "manager should be able to approve the raised request")
+	@QAFTestStep(description = "I should be able to approve the raised request")
 	public void verifySuccessfulApproval() {
 		// step implementation
 		CommonStep.verifyPresent("teamReimbursement.approveSuccess.msg.loc");

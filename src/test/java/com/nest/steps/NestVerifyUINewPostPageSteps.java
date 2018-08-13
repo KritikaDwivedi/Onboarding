@@ -13,14 +13,14 @@ import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyUINewPostPageSteps {
 	
-	@QAFTestStep(description = "user clicks on {0} button")
-	public void clickButton(String button) throws InterruptedException, AWTException{
+	@QAFTestStep(description = "I click on {0} button")
+	public static void clickButton(String button) throws InterruptedException, AWTException{
 		// step implementation
 		CommonUtils.buttonClick(button);
 	}
 	
 	@QAFTestStep(description = "breadcrumb should be {0}")
-	public void verifyNavigationOfCreatePostPage(String title){
+	public static void verifyNavigationOfCreatePostPage(String title){
 		// step implementation
 		String navigationText1=CommonStep.getText("newPost.navigation1.lnk.loc");
 		String navigationText2=CommonStep.getText("newPost.navigation2.lnk.loc");
@@ -29,7 +29,7 @@ public class NestVerifyUINewPostPageSteps {
 	}
 	
 	@QAFTestStep(description = "text fields should be present title, post url, image url, description")
-	public void verifyNewPostTextfield(){
+	public static void verifyNewPostTextfield(){
 		// step implementation
 		CommonStep.verifyPresent("newPost.title.txt.loc");
 		CommonStep.verifyPresent("newPost.postURL.txt.loc");
@@ -38,21 +38,21 @@ public class NestVerifyUINewPostPageSteps {
 	}
 	
 	@QAFTestStep(description = "two dropdowns should be present category and location")
-	public void verifyNewPostDropdown(){
+	public static void verifyNewPostDropdown(){
 		// step implementation
 		CommonStep.verifyPresent("newPost.category.dropdown.loc");
 		CommonStep.verifyPresent("newPost.location.dropdown.loc");
 	}
 	
 	@QAFTestStep(description = "two buttons should be present submit and back")
-	public void verifyNewPostSubmitAndBackButtons(){
+	public static void verifyNewPostSubmitAndBackButtons(){
 		// step implementation
 		CommonStep.verifyPresent("newPost.submit.btn.loc");
 		CommonStep.verifyPresent("newPost.back.btn.loc");
 	}
 	
 	@QAFTestStep(description = "{0} , {1} , {2} , {3} , {4} should be compulsory fields")
-	public void verifyNewPostMandatoryFields(String title, String postURL, String category, String location, String description){
+	public static void verifyNewPostMandatoryFields(String title, String postURL, String category, String location, String description){
 		// step implementation
 		String column[]= {title, postURL, category, location, description};
 		for(int i=0; i<4; i++)
