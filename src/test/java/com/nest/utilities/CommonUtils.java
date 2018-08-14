@@ -4,11 +4,12 @@ import static com.qmetry.qaf.automation.step.CommonStep.click;
 
 import java.awt.AWTException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
@@ -19,13 +20,14 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import com.qmetry.qaf.automation.util.Validator;
 
 public class CommonUtils {
-	public static WebDriver driver=new WebDriverTestBase().getDriver();
+	
+	//public static WebDriver driver=new WebDriverTestBase().getDriver();
 
 	//Comment: Method to click any button
 	public static void buttonClick(String buttonName) throws InterruptedException {
 		// step implementation
 		QAFExtendedWebElement button= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("utility.button.btn.loc"),buttonName));
-		Actions act=new Actions(driver);
+		Actions act=new Actions(new WebDriverTestBase().getDriver());
 		try 
 		{
 			act.moveToElement(button).click().build().perform();
@@ -46,13 +48,13 @@ public class CommonUtils {
 	//Comment:Scrolling to locator
 	public static void scrollDownToView()
 	{	
-		Actions act=new Actions(driver);
+		Actions act=new Actions(new WebDriverTestBase().getDriver());
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 	}
 
 	//Comment:Scrolling to QAFExtendedWebElement
 	public static void scrollUpToView() throws AWTException, InterruptedException
-	{	Actions act=new Actions(driver);
+	{	Actions act=new Actions(new WebDriverTestBase().getDriver());
 		act.sendKeys(Keys.PAGE_UP).perform();
 	}
 
@@ -64,7 +66,7 @@ public class CommonUtils {
 		CommonStep.waitForVisible("utility.navigation.pane.loc");
 		QAFExtendedWebElement menu= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("home.menu.options.loc"),view,menuOption));
 		QAFExtendedWebElement submenu= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("home.submenu.options.loc"),view,subMenuOption));
-		Actions act=new Actions(driver);
+		Actions act=new Actions(new WebDriverTestBase().getDriver());
 		try
 		{
 			menu.click();
@@ -75,9 +77,25 @@ public class CommonUtils {
 			menu.waitForVisible(5000);
 			menu.click();
 		}
-		act.sendKeys(Keys.PAGE_DOWN).moveToElement(submenu).build().perform();
-		submenu.waitForVisible(5000);
-		submenu.click();
+		try
+		{	submenu.waitForVisible(5000);
+			submenu.click();
+		}
+		catch(Exception e)		
+		{	
+			try {
+			act.sendKeys(Keys.PAGE_DOWN).moveToElement(submenu).build().perform();
+			submenu.waitForVisible(5000);
+			submenu.click();
+			}
+			catch(Exception e1)
+			{
+				act.sendKeys(Keys.PAGE_DOWN).moveToElement(submenu).build().perform();
+				submenu.waitForVisible(5000);
+				submenu.click();
+			}
+			
+		}
 	}
 
 	//Comment: Method to navigate from sub menu to sub menu 2
@@ -109,8 +127,12 @@ public class CommonUtils {
 	//Comment: Method for selecting date from date field
 	public static void datePicker(String date) throws InterruptedException, ParseException{
 		// step implementation
-		String dateTime =date;
 
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");  
+	    Date date1 = new Date();  
+		String currentDate=formatter.format(date1);
+		String dateTime=date.replace("CurrentDate", currentDate);
+		
 		//Split the date time to get only the date part
 		String date_dd_MM_yyyy[] = (dateTime.split(" ")[0]).split("-");
 

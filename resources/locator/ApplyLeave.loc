@@ -13,3 +13,11 @@ applyLeave.halfDayOrFullDay.radiobtn.loc = {"locator":"xpath=//span[text()='%s']
 applyLeave.apply.btn.loc = {"locator":"xpath=//button[text()='Apply']","desc":"Apply button"}
 applyLeave.totalLeave.txt.loc = {"locator":"xpath=//span[contains(text(),'Total Leave(s)')]/parent::li","desc":"Total leave count on Apply Leave page"}
 applyLeave.applyConfirmation.info.loc = {"locator":"xpath=//div[text()='Leave has been applied successfully']","desc":"Leave applied confirmation"}
+applyLeave.applicationDenied.info.loc = {"locator":"xpath=//div[text()='You have already applied/taken for selected days.']","desc":"Leave could not be applied confirmation"}
+applyLeave.leaveAction.dropdown.loc = {"locator":"xpath=//tr[1]//td[9]//div[1]//button//div[text()='Select']","desc":"Action on leave dropdown"}
+applyLeave.leaveCancel.dropdown.loc = {"locator":"xpath=//ul[1]//li[2]//a[text()='Cancel']","desc":"Cancel leave"}
+applyLeave.submit.btn.loc = {"locator":"xpath=//button[contains(text(),'Submit')]","desc":"Submit action on leave"}
+
+
+
+

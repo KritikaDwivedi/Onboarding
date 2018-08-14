@@ -33,5 +33,4 @@ META-DATA: {"description":"Verify UI for New Post page", "groups":["SMOKE"]}
 	And two dropdowns should be present category and location
 	And two buttons should be present submit and back
 	And following fields should be mandatory '${posts.mandatory}' on 'New Post' page
-#	And 'Title' , 'Post URL' , 'Category' , 'Location' , 'Description' should be compulsory fields
 END

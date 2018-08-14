@@ -9,6 +9,7 @@ import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+
 import com.nest.utilities.CommonUtils;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
@@ -21,8 +22,6 @@ public class NestAddTravelRequestSteps {
 	@QAFTestStep(description = "following fields should be available {0}")
 	public static void fieldsPresent(String fields)	
 		{
-		
-		//String fields[]= {purposeOfTravel,  type , travelType, journeyFrom, journeyTo, journeyStartDate, journeyEndDate, clientName, cabBooking, hotelBooking, needCash, idProof, moreInfo};
 		String locator[]= {"addTravelRequest.purposeOfTravel.txt.loc", "addTravelRequest.type.dropdown.loc","addTravelRequest.travelType.label.loc","addTravelRequest.journeyFrom.dropdown.loc","addTravelRequest.journeyTo.dropdown.loc","addTravelRequest.journeyFromDate.txt.loc", "addTravelRequest.journeyToDate.txt.loc","addTravelRequest.clientOrProject.txt.loc","addTravelRequest.cabBookingRequired.label.loc","addTravelRequest.hotelBookingRequired.label.loc","addTravelRequest.needCash.lebel.loc","addTravelRequest.moreInfo.txt.loc","addTravelRequest.idProof.btn.loc"};
 		for(int i=0; i<13; i++)
 		{
@@ -89,8 +88,9 @@ public class NestAddTravelRequestSteps {
 	}
 	
 	@QAFTestStep(description = "I raise a travel request")
-	public void verifyTeamLeaveListButtons() throws InterruptedException, ParseException, AWTException{
+	public void raiseTravelRequest() throws InterruptedException, ParseException, AWTException{
 		// step implementation
+		CommonUtils.waitForPageToLoad(10000);
 		NestVerifyUINewPostPageSteps.clickButton("New Travel Request");
 		addTravelEnterData();
 		submitTravelRequest();

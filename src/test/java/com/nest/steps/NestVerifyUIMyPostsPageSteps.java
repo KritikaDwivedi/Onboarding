@@ -7,14 +7,13 @@ import java.awt.AWTException;
 import org.hamcrest.Matchers;
 
 import com.nest.utilities.CommonUtils;
+import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.util.Validator;
-import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
 
 public class NestVerifyUIMyPostsPageSteps {
 	
-	public static String userView="My View";
 	/**
 	 * @param searchTerm
 	 *            : search term to be searched
@@ -23,7 +22,7 @@ public class NestVerifyUIMyPostsPageSteps {
 	@QAFTestStep(description = "I turn on {0}")
 	public static void changeView(String view) throws InterruptedException {
 		// step implementation
-		userView=view;
+		ConfigurationManager.getBundle().setProperty("userView",view);
 		click("home.view.btn.loc");
 		CommonUtils.waitForPageToLoad(35000);
 	}
@@ -31,16 +30,16 @@ public class NestVerifyUIMyPostsPageSteps {
 	@QAFTestStep(description = "I navigate to {0} and {1}")
 	public static void navigationToPage(String menuOption, String subMenuOption) throws InterruptedException
 	{	// step implementation
-		CommonUtils.navigationToMenuAndSubMenu(userView, menuOption, subMenuOption);
-		CommonUtils.waitForPageToLoad(5000);
+		CommonUtils.navigationToMenuAndSubMenu((String)ConfigurationManager.getBundle().getProperty("userView"), menuOption, subMenuOption);
+		CommonUtils.waitForPageToLoad(30000);
 	}
 	
 	@QAFTestStep(description = "I navigate to {0} and {1} and {2}")
 	public static void navigationToSubPage(String menuOption, String subMenuOption, String subMenuOption2) throws InterruptedException, AWTException
 	{	// step implementation
 		CommonUtils.waitForPageToLoad(50000);
-		CommonUtils.navigationToMenuAndSubMenu(userView, menuOption, subMenuOption);
-		CommonUtils.navigationToSubMenuAndSubMenu2(userView, subMenuOption2);
+		CommonUtils.navigationToMenuAndSubMenu((String)ConfigurationManager.getBundle().getProperty("userView"), menuOption, subMenuOption);
+		CommonUtils.navigationToSubMenuAndSubMenu2((String)ConfigurationManager.getBundle().getProperty("userView"), subMenuOption2);
 		CommonUtils.waitForPageToLoad(5000);
 	}
 	

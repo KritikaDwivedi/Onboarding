@@ -6,22 +6,9 @@ import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
+import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyExpenseFunctionalityWithAttachmentSteps {
-	/**
-	 * @param searchTerm
-	 *            : search term to be searched
-	 * @throws InterruptedException 
-	 */
-	public static String fileName="";
-	
-	@QAFTestStep(description = "I click on browse button")
-	public void expenseBrowseButtonClick() throws InterruptedException {
-		// step implementation
-		Thread.sleep(5000);
-		CommonStep.click("newExpense.attach.btn.loc");
-		Thread.sleep(15000);
-	}
 
 	@QAFTestStep(description = "I upload the file {0}")
 	public void expenseFileUpload(String filepath) throws InterruptedException, IOException {
@@ -29,7 +16,7 @@ public class NestVerifyExpenseFunctionalityWithAttachmentSteps {
 			CommonStep.waitForVisible("newExpense.attach.btn.loc");
 			String file[]=filepath.split("//");
 			int len=file.length;
-			fileName=file[len-1];
+			ConfigurationManager.getBundle().setProperty("fileName",file[len-1]);
 			QAFExtendedWebElement upload= new QAFExtendedWebElement("newExpense.uploadWindow.window.loc");
 			upload.sendKeys(filepath);
 	}
@@ -37,8 +24,8 @@ public class NestVerifyExpenseFunctionalityWithAttachmentSteps {
 	@QAFTestStep(description = "attachment should be successfully attached for valid size and format")
 	public void verifySuccessfulUpload() {
 		// step implementation
-		QAFExtendedWebElement attachment= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newExpense.attachment.lnk.loc"),fileName));
-		attachment.isDisplayed();
+		QAFExtendedWebElement attachment= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newExpense.attachment.lnk.loc"),(String)ConfigurationManager.getBundle().getProperty("fileName")));
+		Validator.verifyTrue(attachment.isDisplayed(), "Attachment is not successfully attached", "Attachment is successfully attached");
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.nest.steps;
 
+import com.nest.utilities.CommonUtils;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
@@ -12,14 +13,14 @@ public class NestVerifyExpenseRequestApprovalSteps {
 		String title=NestVerifyExpenseFunctionalityWithInvalidDetailsSteps.map.get("titleActual");
 		QAFExtendedWebElement request= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("teamReimbursement.title.lnk.loc"),title));
 		request.click();
-		Thread.sleep(5000);
+		CommonUtils.waitForPageToLoad(10000);
 	}
 	
 	@QAFTestStep(description = "I enter comment as {0} and click on approve button")
 	public void enterCommentAndClickApproveButton(String comment) throws InterruptedException{
 		// step implementation
 		CommonStep.sendKeys(comment, "teamReimbursement.comment.txt.loc");
-		Thread.sleep(5000);
+		CommonStep.waitForEnabled("teamReimbursement.approve.btn.loc");
 		CommonStep.click("teamReimbursement.approve.btn.loc");
 	}
 	
@@ -28,6 +29,4 @@ public class NestVerifyExpenseRequestApprovalSteps {
 		// step implementation
 		CommonStep.verifyPresent("teamReimbursement.approveSuccess.msg.loc");
 	}
-	
-	
 }

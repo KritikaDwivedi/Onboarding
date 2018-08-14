@@ -14,14 +14,14 @@ META-DATA: {"description":"Verify the Add Travel request functionality", "groups
 	Then travel request confirmation message should be dispalyed
 END
 
-
  
 SCENARIO: QEO-4845_Nest travel request and its approval
 META-DATA: {"description":"Verify the functionality of Travel request section on the Home page", "groups":["SMOKE"]}
 	Given I launch the application
 	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
 	And I navigate to 'Travel' and 'My Travel Requests'
-	And I raise a travel request
+	Then title of page should be 'My Travel Requests '
+	When I raise a travel request
 	And I raise a travel request
 	And I raise a travel request
 	And I click on logout button

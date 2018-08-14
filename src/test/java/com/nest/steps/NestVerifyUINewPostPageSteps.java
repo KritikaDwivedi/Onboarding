@@ -5,10 +5,8 @@ import java.awt.AWTException;
 import org.hamcrest.Matchers;
 
 import com.nest.utilities.CommonUtils;
-import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
-import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import com.qmetry.qaf.automation.util.Validator;
 
 public class NestVerifyUINewPostPageSteps {
@@ -16,6 +14,8 @@ public class NestVerifyUINewPostPageSteps {
 	@QAFTestStep(description = "I click on {0} button")
 	public static void clickButton(String button) throws InterruptedException, AWTException{
 		// step implementation
+		CommonUtils.waitForPageToLoad(20000);
+		CommonUtils.scrollUpToView();
 		CommonUtils.buttonClick(button);
 	}
 	
@@ -49,16 +49,5 @@ public class NestVerifyUINewPostPageSteps {
 		// step implementation
 		CommonStep.verifyPresent("newPost.submit.btn.loc");
 		CommonStep.verifyPresent("newPost.back.btn.loc");
-	}
-	
-	@QAFTestStep(description = "{0} , {1} , {2} , {3} , {4} should be compulsory fields")
-	public static void verifyNewPostMandatoryFields(String title, String postURL, String category, String location, String description){
-		// step implementation
-		String column[]= {title, postURL, category, location, description};
-		for(int i=0; i<4; i++)
-		{
-		QAFExtendedWebElement columnName= new QAFExtendedWebElement(String.format(ConfigurationManager.getBundle().getString("newPost.mandatory.label.loc"),column[i]));
-		columnName.isDisplayed();
-		}
 	}
 }

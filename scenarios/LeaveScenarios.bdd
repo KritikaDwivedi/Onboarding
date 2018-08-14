@@ -5,12 +5,13 @@ META-DATA: {"description":"Verify the Apply Leave functionality when user applie
 	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
 	And I navigate to 'Leave' and 'Apply Leave'
 	Then title of page should be 'Available Leave '
-	When I select type of leave as 'Special' and if special then subtype as 'Wedding'
-	And I select leave from date as '31/12/2018' and to date as '31/12/2018'
-	And I select the leave reason as 'Other' and if other then comment as 'other'
+	When I select type of leave as '${leave.type.singleday}' and if special then subtype as '${leave.specialType.singleday}'
+	And I select leave from date as '${leave.fromDate.singleday}' and to date as '${leave.toDate.singleday}'
+	And I select the leave reason as '${leave.reason}' and if other then comment as '${leave.otherReason}'
 	And I select 'Full Day' leave 
 	And I click on apply button
-	Then title of page should be 'My Leave List'
+	Then leave should be applied successfully
+#	And applied leave should be displayed correctly on my leave list page
 END
 
 
@@ -20,14 +21,14 @@ META-DATA: {"description":"Verify the Apply Leave functionality when user applie
 	When I login with '${Login.Lead.username}' and '${Login.Lead.password}'
 	And I navigate to 'Leave' and 'Apply Leave'
 	Then title of page should be 'Available Leave '
-	When I select type of leave as 'PTO' and if special then subtype as ''
-	And I select leave from date as '01-June-2018' and to date as '08-June-2018'
+	When I select type of leave as '${leave.type.multipleday}' and if special then subtype as '${leave.specialType.multipleday}'
+	And I select leave from date as '${leave.fromDate.multipleday}' and to date as '${leave.toDate.multipleday}'
 	And I calculate the days between from and to date
-	And I select the leave reason as 'Other' and if other then comment as 'other'
+	And I select the leave reason as '${leave.reason}' and if other then comment as '${leave.otherReason}'
 	Then total leave count should not include the holidays on apply leave page
 	And I click on apply button
 	Then leave should be applied successfully
-	And applied leave should be displayed correctly on my leave list page
+#	And applied leave should be displayed correctly on my leave list page
 END
 
 
